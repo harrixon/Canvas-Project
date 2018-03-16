@@ -6,20 +6,57 @@ class DrawingRectangle extends PaintFunction{
     }
     
     onMouseDown(coord,event){
-        this.contextReal.fillStyle = "#f44";
+        console.log(hollow);
+        if (hollow)
+        {
+            this.contextDraft.lineWidth = lineWidth;
+            this.contextDraft.strokeStyle = strokeColor;
+            this.contextReal.lineWidth = lineWidth;
+            this.contextReal.strokeStyle = strokeColor;
+        }
+        else
+        {
+            this.contextDraft.fillStyle = fillColor;
+            this.contextReal.fillStyle = fillColor;
+        }
         this.origX = coord[0];
         this.origY = coord[1];
     }
     onDragging(coord,event){
-        this.contextDraft.fillStyle = "#f44";
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-        this.contextDraft.fillRect(this.origX,this.origY,coord[0]- this.origX,coord[1] - this.origY)
+        let lenX = coord[0] - this.origX;
+        let lenY = coord[1] - this.origY;
+        if (event.shiftKey)
+        {
+            lenY = lenX;
+        }
+        if (hollow)
+        {
+            this.contextDraft.strokeRect(this.origX,this.origY, lenX, lenY);
+        }
+        else
+        {
+            this.contextDraft.fillRect(this.origX,this.origY, lenX, lenY);
+        }
     }
 
     onMouseMove(){}
-    onMouseUp(coord){
+    onMouseUp(coord, event){
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-        this.contextReal.fillRect(this.origX,this.origY,coord[0]- this.origX,coord[1] - this.origY);
+        let lenX = coord[0] - this.origX;
+        let lenY = coord[1] - this.origY;
+        if (event.shiftKey)
+        {
+            lenY = lenX;
+        }
+        if (hollow)
+        {
+            this.contextReal.strokeRect(this.origX,this.origY, lenX, lenY);
+        }
+        else
+        {
+            this.contextReal.fillRect(this.origX,this.origY, lenX, lenY);
+        }
     }
     onMouseLeave(){}
     onMouseEnter(){}

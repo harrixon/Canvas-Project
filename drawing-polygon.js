@@ -4,19 +4,22 @@ class DrawingPolygon extends PaintFunction{
         this.contextReal = contextReal;    
         this.contextDraft = contextDraft;
         this.start = true;
+        this.continue = true;
     }
     
     onMouseDown(coord, event){
         // style
-        this.contextDraft.strokeStyle = "#df4b26";
-        this.contextDraft.lineJoin = "round";
-        this.contextDraft.lineWidth = 5;
-        this.contextReal.strokeStyle = "#df4b26";
-        this.contextReal.lineJoin = "round";
-        this.contextReal.lineWidth = 5;
+        this.contextDraft.strokeStyle = strokeColor;
+        this.contextDraft.lineJoin = lineJoin;
+        this.contextDraft.lineWidth = lineWidth;
+        this.contextReal.strokeStyle = strokeColor;
+        this.contextReal.lineJoin = lineJoin;
+        this.contextReal.lineWidth = lineWidth;
         // starting pt
         if (this.start)
         {
+            this.completeX = coord[0];
+            this.completeY = coord[1];
             this.origX = coord[0];
             this.origY = coord[1];
             this.start = false;
@@ -26,28 +29,38 @@ class DrawingPolygon extends PaintFunction{
     onDragging(){}
 
     onMouseMove(coord, event){
-        this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-        this.drawDraft(coord[0], coord[1]);  
+        if (this.continue)
+        {
+            this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+            this.drawDraft(coord[0], coord[1]);
+        }
     }
 
     onMouseUp(coord, event){
-        this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-        // draw real
-        this.drawReal(coord[0], coord[1]);
-        // prepare for next line
-        this.drawDraft(coord[0], coord[1]);
-        this.origX = coord[0];
-        this.origY = coord[1];
+        if (this.continue)
+        {
+            if (event.shiftKey)
+            {
+                this.kill();
+            }
+            else{
+                this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+                // draw real
+                this.drawReal(coord[0], coord[1]);
+                // prepare for next line
+                this.origX = coord[0];
+                this.origY = coord[1];
+            }
+        }
     }
 
     onMouseLeave(coord, event){
-        console.log(coord[0],coord[1]);
-        if (coord[0] < -10 || coord[1] < -10 || coord[0] > canvasDraft.width + 10 || coord[1] > canvasDraft.height +10)
-        {
-            // this.start = true;
-            this.contextDraft.clearRect(0,0,canvasDraft.width, canvasDraft.height);
-            // this.contextDraft.closePath();
-        }
+        // if (coord[0] < -10 || coord[1] < -10 || coord[0] > canvasDraft.width + 10 || coord[1] > canvasDraft.height +10)
+        // {
+        //     // this.start = true;
+        //     this.contextDraft.clearRect(0,0,canvasDraft.width, canvasDraft.height);
+        //     // this.contextDraft.closePath();
+        // }
     }
     onMouseEnter(){}
 
@@ -65,5 +78,12 @@ class DrawingPolygon extends PaintFunction{
         this.contextReal.lineTo(x, y);
         this.contextReal.closePath();
         this.contextReal.stroke();
+    }
+
+    kill(){
+        console.log("click");
+        this.continue = false;
+        this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+        this.drawReal(this.completeX, this.completeY);
     }
 }

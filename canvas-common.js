@@ -5,6 +5,11 @@ let contextDraft = canvasDraft.getContext('2d');
 let currentFunction;
 let dragging = false;
 let background = "#ffffff";
+let strokeColor = "rgba(22, 232, 199, 1)";
+let fillColor = "rgba(38, 255, 37, 0.5)";       // "rgba(128, 139, 255, 0)" = white, transparent
+let hollow;                                     // depends on input, need check mechanism
+let lineWidth = 2;                              // 1.0 up
+let lineJoin = "round";                         // "bevel" || "round" || "miter"
 
 $('#canvas-draft').mousedown(function(e){
     let mouseX = e.pageX - this.offsetLeft;

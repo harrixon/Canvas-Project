@@ -14,15 +14,20 @@
             <canvas id="canvas-draft" class="canvas" width='1280px' height='720px'></canvas>
         </div>
         <div class="buttons">
+            <!-- functions -->
             <div id="drawing-rectangle"><i class="fas fa-square-full fa-3x"></i></div>
             <div id="drawing-rectangle-hollow"><i class="far fa-square fa-3x"></i></div>
+            <div id="drawing-quadratic-curve"><i class="fas fa-circle fa-2x"></i></div>
             <div id="drawing-circle"><i class="fas fa-circle fa-3x"></i></div>
-            <div id="drawing-circle-hollow"><i class="far fa-circle fa-3x"></i></div>
             <div id="drawing-line"><i class="fas fa-minus fa-3x"></i></div>
             <div id="drawing-polygon"><i class="far fa-star fa-3x"></i></div>
             <div id="drawing-pencil"><i class="fas fa-pencil-alt fa-3x"></i></div>
             <div id="drawing-eraser"><i class="fas fa-eraser fa-3x"></i></div>
             <div id="drawing-reset"><i class="far fa-trash-alt fa-3x"></i></div>
+            <!-- style -->
+            <button id="set-stroke-color" type="submit">set stroke color</button>
+            <button id="set-fill-color" type="submit">set fill color</button>
+            <!-- <input id="set-background-color" type="button" value="background-color"> -->
         </div>
 
         <!-- jQuery, bootstrap, fontawesome -->
@@ -33,9 +38,8 @@
         <!-- custom js -->
         <script type='text/javascript' src="canvas-common.js"></script>
         <script type='text/javascript' src="drawing-rectangle.js"></script>
-        <script type='text/javascript' src="drawing-rectangle-hollow.js"></script>
+        <script type='text/javascript' src="drawing-quadratic-curve.js"></script>
         <script type='text/javascript' src="drawing-circle.js"></script>
-        <script type='text/javascript' src="drawing-circle-hollow.js"></script>
         <script type='text/javascript' src="drawing-line.js"></script>
         <script type="text/javascript" src="drawing-polygon.js"></script>
         <script type='text/javascript' src="drawing-pencil.js"></script>
@@ -45,16 +49,18 @@
         <!-- button script -->
         <script type='text/javascript'>
             $('#drawing-rectangle').click(()=>{
+                hollow = false;     // to be set by fillcolor
                 currentFunction = new DrawingRectangle(contextReal,contextDraft);
             });
             $('#drawing-rectangle-hollow').click(()=>{
-                currentFunction = new DrawingRectangleHollow(contextReal,contextDraft);
+                hollow = true;      // to be set by fillcolor
+                currentFunction = new DrawingRectangle(contextReal,contextDraft);
+            });
+            $('#drawing-quadratic-curve').click(()=>{
+                currentFunction = new DrawingQuadraticCurve(contextReal,contextDraft);
             });
             $('#drawing-circle').click(()=>{
                 currentFunction = new DrawingCircle(contextReal,contextDraft);
-            });
-            $('#drawing-circle-hollow').click(()=>{
-                currentFunction = new DrawingCircleHollow(contextReal,contextDraft);
             });
             $('#drawing-line').click(()=>{
                 currentFunction = new DrawingLine(contextReal,contextDraft);
@@ -74,7 +80,15 @@
             // $('#drawing-background').click(()=>{
             //     currentFunction = new drawingBackground(contextReal); // context-bg
             // });
-               
+            // $('#set-background-color').click(()=>{
+            //     currentFunction = new drawingReset(contextReal);
+            // });
+            $('#set-stroke-color').click(()=>{
+                strokeColor = `rgba(125, 125, 125, 1)`;
+            });
+            $('#set-fill-color').click(()=>{
+                fillColor = `rgba(200, 200, 200, 0.5)`;
+            });
         </script>
     </body>
 </html>

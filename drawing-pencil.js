@@ -6,9 +6,9 @@ class DrawingPencil extends PaintFunction{
     
     onMouseDown(coord,event){
         // style
-        this.context.strokeStyle = "#df4b26";
-        this.context.lineJoin = "round";
-        this.context.lineWidth = 5;
+        this.context.strokeStyle = strokeColor;
+        this.context.lineJoin = lineJoin;
+        this.context.lineWidth = lineWidth;
 
         this.context.beginPath();
         this.context.moveTo(coord[0],coord[1]);

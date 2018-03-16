@@ -7,12 +7,12 @@ class DrawingLine extends PaintFunction{
 
     onMouseDown(coord, event){
         // style
-        this.contextDraft.strokeStyle = "#df4b26";
-        this.contextDraft.lineJoin = "round";
-        this.contextDraft.lineWidth = 5;
-        this.contextReal.strokeStyle = "#df4b26";
-        this.contextReal.lineJoin = "round";
-        this.contextReal.lineWidth = 5;
+        this.contextDraft.strokeStyle = strokeColor;
+        this.contextDraft.lineJoin = lineJoin;
+        this.contextDraft.lineWidth = lineWidth;
+        this.contextReal.strokeStyle = strokeColor;
+        this.contextReal.lineJoin = lineJoin;
+        this.contextReal.lineWidth = lineWidth;
         // starting pt
         this.origX = coord[0];
         this.origY = coord[1];
@@ -20,12 +20,16 @@ class DrawingLine extends PaintFunction{
 
     onDragging(coord, event){
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+        // if ()
+        this.contextDraft.setLineDash([5,10]);
         this.drawDraft(coord[0],coord[1]);
     }
 
     onMouseMove(){}
     onMouseUp(coord, event){
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+        // if()
+        this.contextDraft.setLineDash([]);
         this.drawReal(coord[0],coord[1]);
     }
     
