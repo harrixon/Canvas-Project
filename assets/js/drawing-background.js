@@ -1,14 +1,16 @@
-class drawingBackground extends PaintFunction{
+class DrawingBackground extends PaintFunction{
     constructor(contextReal){
         super();
-        this.contextBackground = contextBackground;
+        // this.contextBackground = contextBackground;
+        this.contextReal = contextReal;
         this.setBackground();
     }
     
     setBackground(event){
-        this.contextBackground.strokeStyle = background;
-        this.contextBackground.fillStyle = background;
-        this.contextBackground.fillRect(0,0,canvasDraft.width,canvasDraft.height);
+        var img = new Image();
+        img.src = "assets/img/background.png";
+        img.width = 10;
+        this.contextReal.drawImage(img, 0, 0);
     }
 
     // onMouseDown(){}
@@ -18,3 +20,4 @@ class drawingBackground extends PaintFunction{
     // onMouseLeave(){}
     // onMouseEnter(){}
 }
+

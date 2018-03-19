@@ -1,4 +1,4 @@
-class drawingReset extends PaintFunction{
+class DrawingReset extends PaintFunction{
     constructor(contextReal){
         super();
         this.contextReal = contextReal;

@@ -5,7 +5,7 @@
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
         integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-        <link href="style.css" rel="stylesheet" type='text/css'>
+        <link href="assets/css/style.css" rel="stylesheet" type='text/css'>
     </head>
 
     <body>
@@ -45,88 +45,25 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
         <!-- custom js -->
-        <script type='text/javascript' src="canvas-common.js"></script>
-        <script type='text/javascript' src="drawing-rectangle.js"></script>
-        <script type='text/javascript' src="drawing-quadratic-curve.js"></script>
-        <script type='text/javascript' src="drawing-circle.js"></script>
-        <script type='text/javascript' src="drawing-ellipse.js"></script>
-        <script type='text/javascript' src="drawing-line.js"></script>
-        <script type="text/javascript" src="drawing-polygon.js"></script>
-        <script type='text/javascript' src="drawing-pencil.js"></script>
-        <script type='text/javascript' src="drawing-pencil-rotating-strokes.js"></script>
-        <script type='text/javascript' src="drawing-font.js"></script>
-        <script type='text/javascript' src="CanvasInput.js"></script>
-        <script type='text/javascript' src="drawing-paint.js"></script>
-        <script type='text/javascript' src="drawing-eraser.js"></script>
-        <script type='text/javascript' src="drawing-reset.js"></script>
-        <script type='text/javascript' src="drawing-undo-redo.js"></script>
-        <script type='text/javascript' src="drawing-background.js"></script>
+        <script type='text/javascript' src="assets/js/canvas-common.js"></script>
+        <script type='text/javascript' src="assets/js/drawing-rectangle.js"></script>
+        <script type='text/javascript' src="assets/js/drawing-quadratic-curve.js"></script>
+        <script type='text/javascript' src="assets/js/drawing-circle.js"></script>
+        <script type='text/javascript' src="assets/js/drawing-ellipse.js"></script>
+        <script type='text/javascript' src="assets/js/drawing-line.js"></script>
+        <script type="text/javascript" src="assets/js/drawing-polygon.js"></script>
+        <script type='text/javascript' src="assets/js/drawing-pencil.js"></script>
+        <script type='text/javascript' src="assets/js/drawing-pencil-rotating-strokes.js"></script>
+        <script type='text/javascript' src="assets/js/drawing-font.js"></script>
+        <script type='text/javascript' src="assets/js/CanvasInput.js"></script>
+        <script type='text/javascript' src="assets/js/drawing-paint.js"></script>
+        <script type='text/javascript' src="assets/js/drawing-eraser.js"></script>
+        <script type='text/javascript' src="assets/js/drawing-reset.js"></script>
+        <script type='text/javascript' src="assets/js/drawing-undo-redo.js"></script>
+        <script type='text/javascript' src="assets/js/drawing-save.js"></script>
+        <script type='text/javascript' src="assets/js/drawing-background.js"></script>
+        <script type='text/javascript' src="assets/js/drawing-buttons.js"></script>
+        
 
-        <!-- button script -->
-        <script type='text/javascript'>
-            $(document).ready(()=>{
-                currentFunction = new DrawingPencil(contextReal,contextDraft);
-            });
-            $('#drawing-rectangle').click(()=>{
-                hollow = false;     // to be set by fillcolor
-                currentFunction = new DrawingRectangle(contextReal,contextDraft);
-            });
-            $('#drawing-rectangle-hollow').click(()=>{
-                hollow = true;      // to be set by fillcolor
-                currentFunction = new DrawingRectangle(contextReal,contextDraft);
-            });
-            $('#drawing-quadratic-curve').click(()=>{
-                currentFunction = new DrawingQuadraticCurve(contextReal,contextDraft);
-            });
-            $('#drawing-circle').click(()=>{
-                currentFunction = new DrawingCircle(contextReal,contextDraft);
-            });
-            $('#drawing-ellipse').click(()=>{
-                currentFunction = new DrawingEllipse(contextReal,contextDraft);
-            });
-            $('#drawing-line').click(()=>{
-                currentFunction = new DrawingLine(contextReal,contextDraft);
-            });
-            $('#drawing-polygon').click(()=>{
-                currentFunction = new DrawingPolygon(contextReal,contextDraft);
-            });
-            $('#drawing-pencil').click(()=>{
-                currentFunction = new DrawingPencil(contextReal,contextDraft);
-            });
-            $('#drawing-pencil-rotating-strokes').click(()=>{
-                currentFunction = new DrawingPencilRotatingStrokes(contextReal,contextDraft);
-            });
-            $('#drawing-font').click(()=>{
-                currentFunction = new DrawingFont(contextReal,contextDraft);
-            });
-            $('#drawing-paint').click(()=>{
-                currentFunction = new DrawingPaint(contextReal,contextDraft);
-            });
-            $('#drawing-eraser').click(()=>{
-                currentFunction = new DrawingEraser(contextReal,contextDraft);
-            });
-            $('#drawing-reset').click(()=>{
-                currentFunction = new drawingReset(contextReal);
-            });
-            // $('#drawing-save').click(()=>{
-                
-            // });
-            $('#drawing-undo').click(()=>{
-                cUndo();
-            });
-            $('#drawing-redo').click(()=>{
-                cRedo();
-            });
-            $('#drawing-background').click(()=>{
-                // currentFunction = new drawingBackground(contextReal); // context-bg
-                drawingBackground();
-            });
-            // $('#set-stroke-color').click(()=>{
-            //     strokeColor = `rgba(125, 125, 125, 1)`;
-            // });
-            // $('#set-fill-color').click(()=>{
-            //     fillColor = `rgba(200, 200, 200, 0.5)`;
-            // });
-        </script>
     </body>
 </html>

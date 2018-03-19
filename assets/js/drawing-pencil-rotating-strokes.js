@@ -49,7 +49,7 @@ class DrawingPencilRotatingStrokes extends PaintFunction{
 // based on http://www.tricedesigns.com/2012/01/04/sketching-with-html5-canvas-and-brush-images/
 
 var img = new Image();
-img.src = 'http://www.tricedesigns.com/wp-content/uploads/2012/01/brush2.png';
+img.src = "assets/img/brush2.png";
 img.width = 10;
 
 function distanceBetween(point1, point2) {
