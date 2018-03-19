@@ -15,7 +15,6 @@ class DrawingFont extends PaintFunction{
         this.w = Math.abs(this.startX - this.endX);
         console.log(this.startX, this.endX, this.w);
         initDrawingFont(this.startX, this.startY, this.w, background);
-        cPush();
     }
 
     // onDragging(){}
@@ -56,6 +55,7 @@ function print(value, x, y, w){
     contextReal.fillText(`${value}`, x, y+45);   // offset, not sure why
     // kill canvas-text
     $("#canvas-text").remove();
+    cPush();
     currentFunction = new DrawingFont(contextReal,contextDraft);
 }
 
