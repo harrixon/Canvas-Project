@@ -28,6 +28,7 @@ class DrawingLine extends PaintFunction{
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
         this.contextDraft.setLineDash([]);
         this.drawReal(coord[0],coord[1]);
+        cPush();
     }
     
     // onMouseMove(){}

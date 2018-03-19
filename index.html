@@ -27,9 +27,13 @@
             <div id="drawing-paint"><i class="fas fa-tint fa-3x"></i></div>
             <div id="drawing-eraser"><i class="fas fa-eraser fa-3x"></i></div>
             <div id="drawing-reset"><i class="far fa-trash-alt fa-3x"></i></div>
+            <div id="drawing-save"><p>SAVE</p></div>
+            <div id="drawing-redo"><p>REDO</p></div>
+            <div id="drawing-undo"><p>UNDO</p></div>
             <!-- style -->
-            <button id="set-stroke-color" type="submit">set stroke color</button>
-            <button id="set-fill-color" type="submit">set fill color</button>
+            <!-- <button id="set-stroke-color" type="submit">set stroke color</button>
+            <button id="set-fill-color" type="submit">set fill color</button> -->
+            
             <!-- <input id="set-background-color" type="button" value="background-color"> -->
         </div>
 
@@ -52,6 +56,7 @@
         <script type='text/javascript' src="drawing-paint.js"></script>
         <script type='text/javascript' src="drawing-eraser.js"></script>
         <script type='text/javascript' src="drawing-reset.js"></script>
+        <script type='text/javascript' src="drawing-undo-redo.js"></script>
 
         <!-- button script -->
         <script type='text/javascript'>
@@ -96,15 +101,24 @@
             $('#drawing-reset').click(()=>{
                 currentFunction = new drawingReset(contextReal);
             });
+            // $('#drawing-save').click(()=>{
+                
+            // });
+            $('#drawing-undo').click(()=>{
+                cUndo();
+            });
+            $('#drawing-redo').click(()=>{
+                cRedo();
+            });
             // $('#drawing-background').click(()=>{
             //     currentFunction = new drawingBackground(contextReal); // context-bg
             // });
-            $('#set-stroke-color').click(()=>{
-                strokeColor = `rgba(125, 125, 125, 1)`;
-            });
-            $('#set-fill-color').click(()=>{
-                fillColor = `rgba(200, 200, 200, 0.5)`;
-            });
+            // $('#set-stroke-color').click(()=>{
+            //     strokeColor = `rgba(125, 125, 125, 1)`;
+            // });
+            // $('#set-fill-color').click(()=>{
+            //     fillColor = `rgba(200, 200, 200, 0.5)`;
+            // });
         </script>
     </body>
 </html>

@@ -34,9 +34,9 @@ mouse-down on canvas to set center, drag to size, mouse-up to finish
 
 ##### Ellipse
 
-added ellipse function, need improvement
+mouse-down on canvas to start  (starting point), drag to resize (length), mouse-up to draw
 
-###### update 18/03/2018
+###### update 19/03/2018
 
 
 

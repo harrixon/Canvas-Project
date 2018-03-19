@@ -54,6 +54,7 @@ class DrawingRectangle extends PaintFunction{
         {
             this.contextReal.fillRect(this.origX,this.origY, lenX, lenY);
         }
+        cPush();
     }
 
     onMouseMove(){}

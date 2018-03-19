@@ -25,6 +25,7 @@ class DrawingPolygon extends PaintFunction{
             if (event.shiftKey)
             {
                 this.kill();
+                cPush();
             }
             else{
                 this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);

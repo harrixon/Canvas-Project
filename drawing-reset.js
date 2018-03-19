@@ -7,6 +7,7 @@ class drawingReset extends PaintFunction{
     
     reset(event){
         this.contextReal.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+        cPush();
     }
 
     // onMouseDown(){}

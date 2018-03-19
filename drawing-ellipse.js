@@ -29,6 +29,7 @@ class DrawingEllipse extends PaintFunction{
         endY = coord[1];
         dragging = false;
         drawEllipse(startX,startY,endX,endY,dragging);
+        cPush();
     }
 
     // onMouseMove(){}

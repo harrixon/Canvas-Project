@@ -6,6 +6,7 @@ class DrawingPaint extends PaintFunction{
     
     onMouseUp(coord, event){
         paintBucketApp(event);
+        cPush();
     }
     
     // onMouseDown(){}

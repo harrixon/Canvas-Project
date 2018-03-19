@@ -48,6 +48,7 @@ class DrawingQuadraticCurve extends PaintFunction{
         {
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
             this.drawReal(coord);
+            cPush();
         }
     }
 

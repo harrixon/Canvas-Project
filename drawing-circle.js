@@ -34,6 +34,7 @@ class DrawingCircle extends PaintFunction{
         this.contextReal.arc(this.centerX, this.centerY, this.radius, 0, 2*Math.PI, false);
         this.contextReal.stroke();
         this.contextReal.fill();
+        cPush();
     }
 
     // onMouseMove(){}

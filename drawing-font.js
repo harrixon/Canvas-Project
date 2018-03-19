@@ -15,6 +15,7 @@ class DrawingFont extends PaintFunction{
         this.w = Math.abs(this.startX - this.endX);
         console.log(this.startX, this.endX, this.w);
         initDrawingFont(this.startX, this.startY, this.w, background);
+        cPush();
     }
 
     // onDragging(){}
