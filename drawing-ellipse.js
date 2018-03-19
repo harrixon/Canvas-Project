@@ -13,34 +13,22 @@ class DrawingEllipse extends PaintFunction{
     }
     
     onMouseDown(coord, event){
-        this.topX = coord[0];
-        this.topY = coord[1];
+        startX = coord[0];
+        startY = coord[1];
+        dragging = true;
     }
 
     onDragging(coord, event){
-        this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-        this.centerX = (this.topX + coord[0]) / 2;
-        this.centerY = (this.topY + coord[1]) / 2;
-        this.radiusX = Math.abs((this.topX - coord[0]) * 0.3);
-        this.radiusY = Math.abs((this.topY - coord[1]) * 0.7);
-        this.contextDraft.beginPath();
-        this.contextDraft.setLineDash([5,10]);
-        this.contextDraft.ellipse(this.centerX, this.centerY, this.radiusX, this.radiusY, 0, 2*Math.PI, false);
-        this.contextDraft.stroke();
-        this.contextDraft.setLineDash([]);
-        this.contextDraft.fill();
+        endX = coord[0];
+        endY = coord[1];
+        drawEllipse(startX,startY,endX,endY,dragging);
     }
 
     onMouseUp(coord, event){
-        this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-        this.centerX = (this.topX + coord[0]) / 2;
-        this.centerY = (this.topY + coord[1]) / 2;
-        this.radiusX = Math.abs((this.topX - coord[0]) * 0.3);
-        this.radiusY = Math.abs((this.topY - coord[1]) * 0.7);
-        this.contextReal.beginPath();
-        this.contextReal.ellipse(this.topX, this.topY, this.radiusX, this.radiusY, 0, 2*Math.PI, false);
-        this.contextReal.stroke();
-        this.contextReal.fill();
+        endX = coord[0];
+        endY = coord[1];
+        dragging = false;
+        drawEllipse(startX,startY,endX,endY,dragging);
     }
 
     // onMouseMove(){}
@@ -48,8 +36,27 @@ class DrawingEllipse extends PaintFunction{
     // onMouseEnter(){}
 }
 
-// alt: ref pt on click, not coner
-// this.cX = (this.topX + coord[0]) / 2;
-// this.cY = (this.topY + coord[1]) / 2;
-// this.r = ( (coord[0] - this.topX) ) / 2;
-// this.contextDraft.arc(this.cX, this.cY, this.r, 0, 2*Math.PI, false);
+var startX, startY;
+var endX, endY;
+
+function drawEllipse(x1,y1,x2,y2,dragging) {
+    contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+    let radiusX = Math.sqrt(Math.pow(x1-x2,2) + Math.pow(y1-y2,2));
+    let rotation = Math.atan((y2-y1)/(x2-x1));
+    let c1=(x1+x2)/2;
+    let c2=(y1+y2)/2;
+    if (dragging)
+    {
+        contextDraft.beginPath();
+        contextDraft.ellipse(c1, c2, radiusX, radiusX*0.3, rotation, 0, 2*Math.PI);
+        contextDraft.stroke();
+        contextDraft.fill();
+    }
+    else
+    {
+        contextReal.beginPath();
+        contextReal.ellipse(c1, c2, radiusX, radiusX*0.3, rotation, 0, 2*Math.PI);
+        contextReal.stroke();
+        contextReal.fill();
+    }
+};

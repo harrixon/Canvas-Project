@@ -19,6 +19,7 @@ function paintBucketApp(e)
 {
     var canvas = canvasReal;
     var ctx = contextReal;
+    var data = [];
 
     var getPixelPos = function (x, y) {
         return (y * canvas.width + x) * 4;
@@ -35,7 +36,7 @@ function paintBucketApp(e)
         data[pos] = color.r || 0;
         data[pos+1] = color.g || 0;
         data[pos+2] = color.b || 0;
-        data[pos+3] = color.hasOwnProperty("canvas-real") ? color.a : 255;;
+        data[pos+3] = color.hasOwnProperty("canvas-real") ? color.a : 255;
     };
 
     // http://www.williammalone.com/articles/html5-canvas-javascript-paint-bucket-tool/
@@ -75,25 +76,25 @@ function paintBucketApp(e)
             
             if (x > 0) {
                 if (matchStartColor(dstData, currentPos-4, startColor)) {
-                if (!reachLeft) {
-                    todo.push([x-1, y]);
-                    reachLeft = true;
-                }
+                    if (!reachLeft) {
+                        todo.push([x-1, y]);
+                        reachLeft = true;
+                    }
                 }
                 else if (reachLeft) {
-                reachLeft = false;
+                    reachLeft = false;
                 }
             }
             
             if (x < canvas.width-1) {
                 if (matchStartColor(dstData, currentPos+4, startColor)) {
-                if (!reachRight) {
-                    todo.push([x+1, y]);
-                    reachRight = true;
-                }
+                    if (!reachRight) {
+                        todo.push([x+1, y]);
+                        reachRight = true;
+                    }
                 }
                 else if (reachRight) {
-                reachRight = false;
+                    reachRight = false;
                 }
             }
             currentPos += canvas.width * 4;
