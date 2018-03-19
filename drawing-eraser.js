@@ -18,7 +18,7 @@ class DrawingEraser extends PaintFunction{
     }
 
     // onMouseMove(){}
-    // onMouseUp(){
+    onMouseUp(coord,event){
         cPush();
     }
     // onMouseLeave(){}
