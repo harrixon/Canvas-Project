@@ -6,9 +6,9 @@ ctx = document.getElementById('canvas-real').getContext("2d");
 // let contextReal = canvasReal.getContext('2d');
 	
 function cPush() {
-    // console.log("step++");
+    if (cStep < cPushArray.length) 
+        cPushArray.length = cStep;
     cStep++;
-   // if (cStep < cPushArray.length) { cPushArray.length = cStep; }
     cPushArray.push(document.getElementById('canvas-real').toDataURL());
 }
 
@@ -17,7 +17,7 @@ function cUndo() {
     if (cStep > 0) {
         cStep--;
         var canvasPic = new Image();
-        canvasPic.src = cPushArray[cStep];
+        canvasPic.src = cPushArray[cStep-1];
         ctx.clearRect(0,0,canvasDraft.width,canvasDraft.height);            // added to clear canvas
         canvasPic.onload = function () { ctx.drawImage(canvasPic, 0, 0); }
     }
@@ -25,12 +25,12 @@ function cUndo() {
 
 function cRedo() {
     console.log("redo");
-    if (cStep < cPushArray.length-1) {
+    if (cStep < cPushArray.length) {
         cStep++;
         var canvasPic = new Image();
-        canvasPic.src = cPushArray[cStep];
+        canvasPic.src = cPushArray[cStep-1];
         ctx.clearRect(0,0,canvasDraft.width,canvasDraft.height);
         canvasPic.onload = function () { ctx.drawImage(canvasPic, 0, 0); }
-        cPush();
     }
+    
 }

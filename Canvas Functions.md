@@ -100,3 +100,13 @@ Reset the canvas
 
 ######update 16/03/2018
 
+
+
+##### Redo / Undo
+
+go 1 step back/forward
+
+###### update 19/03/2018
+
+
+

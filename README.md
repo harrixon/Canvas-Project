@@ -171,5 +171,15 @@ set as pencil
 
 to avoid `VM20 canvas-common.js:41 Uncaught TypeError: Cannot read property 'moveEventFunction' of undefined`
 
+##### Redo Undo
+
+implemented, but with bugs
+
+##### Eraser
+
+fixed `.lineJoin = "round"` not rendered
+
+
+
 
 
