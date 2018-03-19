@@ -23,6 +23,7 @@
             <div id="drawing-line"><i class="fas fa-minus fa-3x"></i></div>
             <div id="drawing-polygon"><i class="far fa-star fa-3x"></i></div>
             <div id="drawing-pencil"><i class="fas fa-pencil-alt fa-3x"></i></div>
+            <div id="drawing-pencil-rotating-strokes"><i class="fas fa-pencil-alt fa-4x"></i></div>
             <div id="drawing-font"><i class="fab fa-amilia fa-3x"></i></div>
             <div id="drawing-paint"><i class="fas fa-tint fa-3x"></i></div>
             <div id="drawing-eraser"><i class="fas fa-eraser fa-3x"></i></div>
@@ -30,6 +31,7 @@
             <div id="drawing-save"><p>SAVE</p></div>
             <div id="drawing-redo"><p>REDO</p></div>
             <div id="drawing-undo"><p>UNDO</p></div>
+            <div id="drawing-background"><p>BACKGROUND</p></div>
             <!-- style -->
             <!-- <button id="set-stroke-color" type="submit">set stroke color</button>
             <button id="set-fill-color" type="submit">set fill color</button> -->
@@ -51,12 +53,14 @@
         <script type='text/javascript' src="drawing-line.js"></script>
         <script type="text/javascript" src="drawing-polygon.js"></script>
         <script type='text/javascript' src="drawing-pencil.js"></script>
+        <script type='text/javascript' src="drawing-pencil-rotating-strokes.js"></script>
         <script type='text/javascript' src="drawing-font.js"></script>
         <script type='text/javascript' src="CanvasInput.js"></script>
         <script type='text/javascript' src="drawing-paint.js"></script>
         <script type='text/javascript' src="drawing-eraser.js"></script>
         <script type='text/javascript' src="drawing-reset.js"></script>
         <script type='text/javascript' src="drawing-undo-redo.js"></script>
+        <script type='text/javascript' src="drawing-background.js"></script>
 
         <!-- button script -->
         <script type='text/javascript'>
@@ -89,6 +93,9 @@
             $('#drawing-pencil').click(()=>{
                 currentFunction = new DrawingPencil(contextReal,contextDraft);
             });
+            $('#drawing-pencil-rotating-strokes').click(()=>{
+                currentFunction = new DrawingPencilRotatingStrokes(contextReal,contextDraft);
+            });
             $('#drawing-font').click(()=>{
                 currentFunction = new DrawingFont(contextReal,contextDraft);
             });
@@ -110,9 +117,10 @@
             $('#drawing-redo').click(()=>{
                 cRedo();
             });
-            // $('#drawing-background').click(()=>{
-            //     currentFunction = new drawingBackground(contextReal); // context-bg
-            // });
+            $('#drawing-background').click(()=>{
+                // currentFunction = new drawingBackground(contextReal); // context-bg
+                drawingBackground();
+            });
             // $('#set-stroke-color').click(()=>{
             //     strokeColor = `rgba(125, 125, 125, 1)`;
             // });
