@@ -17,11 +17,14 @@
             <!-- functions -->
             <div id="drawing-rectangle"><i class="fas fa-square-full fa-3x"></i></div>
             <div id="drawing-rectangle-hollow"><i class="far fa-square fa-3x"></i></div>
-            <div id="drawing-quadratic-curve"><i class="fas fa-circle fa-2x"></i></div>
+            <div id="drawing-quadratic-curve"><i class="fas fa-moon fa-3x"></i></div>
             <div id="drawing-circle"><i class="fas fa-circle fa-3x"></i></div>
+            <div id="drawing-ellipse"><i class="fas fa-eye fa-3x"></i></div>
             <div id="drawing-line"><i class="fas fa-minus fa-3x"></i></div>
             <div id="drawing-polygon"><i class="far fa-star fa-3x"></i></div>
             <div id="drawing-pencil"><i class="fas fa-pencil-alt fa-3x"></i></div>
+            <div id="drawing-font"><i class="fab fa-amilia fa-3x"></i></div>
+            <div id="drawing-paint"><i class="fas fa-tint fa-3x"></i></div>
             <div id="drawing-eraser"><i class="fas fa-eraser fa-3x"></i></div>
             <div id="drawing-reset"><i class="far fa-trash-alt fa-3x"></i></div>
             <!-- style -->
@@ -40,14 +43,21 @@
         <script type='text/javascript' src="drawing-rectangle.js"></script>
         <script type='text/javascript' src="drawing-quadratic-curve.js"></script>
         <script type='text/javascript' src="drawing-circle.js"></script>
+        <script type='text/javascript' src="drawing-ellipse.js"></script>
         <script type='text/javascript' src="drawing-line.js"></script>
         <script type="text/javascript" src="drawing-polygon.js"></script>
         <script type='text/javascript' src="drawing-pencil.js"></script>
+        <script type='text/javascript' src="drawing-font.js"></script>
+        <script type='text/javascript' src="CanvasInput.js"></script>
+        <script type='text/javascript' src="drawing-paint.js"></script>
         <script type='text/javascript' src="drawing-eraser.js"></script>
         <script type='text/javascript' src="drawing-reset.js"></script>
 
         <!-- button script -->
         <script type='text/javascript'>
+            $(document).ready(()=>{
+                currentFunction = new DrawingPencil(contextReal,contextDraft);
+            });
             $('#drawing-rectangle').click(()=>{
                 hollow = false;     // to be set by fillcolor
                 currentFunction = new DrawingRectangle(contextReal,contextDraft);
@@ -62,6 +72,9 @@
             $('#drawing-circle').click(()=>{
                 currentFunction = new DrawingCircle(contextReal,contextDraft);
             });
+            $('#drawing-ellipse').click(()=>{
+                currentFunction = new DrawingEllipse(contextReal,contextDraft);
+            });
             $('#drawing-line').click(()=>{
                 currentFunction = new DrawingLine(contextReal,contextDraft);
             });
@@ -71,6 +84,12 @@
             $('#drawing-pencil').click(()=>{
                 currentFunction = new DrawingPencil(contextReal,contextDraft);
             });
+            $('#drawing-font').click(()=>{
+                currentFunction = new DrawingFont(contextReal,contextDraft);
+            });
+            $('#drawing-paint').click(()=>{
+                currentFunction = new DrawingPaint(contextReal,contextDraft);
+            });
             $('#drawing-eraser').click(()=>{
                 currentFunction = new DrawingEraser(contextReal,contextDraft);
             });
@@ -79,9 +98,6 @@
             });
             // $('#drawing-background').click(()=>{
             //     currentFunction = new drawingBackground(contextReal); // context-bg
-            // });
-            // $('#set-background-color').click(()=>{
-            //     currentFunction = new drawingReset(contextReal);
             // });
             $('#set-stroke-color').click(()=>{
                 strokeColor = `rgba(125, 125, 125, 1)`;

@@ -7,6 +7,7 @@
 3. Un-dos(Re-do)
 
 
+***
 
 ### Drawing Fx
 
@@ -19,6 +20,7 @@
 7. Fill color, Stroke color, Paint
 
 
+***
 
 ### Re-Un-do
 
@@ -36,7 +38,7 @@ API [`toBlob()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElem
 
 [Firebase Storage](https://firebase.google.com/)
 
-
+***
 
 ### UI
 
@@ -54,7 +56,7 @@ border / fill color option
 
 display
 
-
+***
 
 ### Maybe
 
@@ -65,7 +67,7 @@ display
 3. Mobile Support
 
 
-
+*****
 
 ### 16/03/2018
 
@@ -81,7 +83,7 @@ mouse-down on canvas to start (origin), drag to resize (radius), mouse-up to dra
 
 mouse-down on canvas to start (starting point), drag to resize (length), mouse-up to draw
 
-##### Polygon
+##### Polygon (outdated)
 
 mouse-down on canvas to start (starting point), drag to resize (length), mouse-up to draw first line
 
@@ -107,13 +109,67 @@ Reset the canvas
 
 ##### To do
 
-dotted line for straight line, hollow rectangle/circle/polygon, quad.curve
+~~polygon with color fill~~
 
-ellipse
+~~dotted line on preview~~
+
+dotted line for straight line, hollow rectangle/circle/polygon, quad.curve ?
+
+~~ellipse~~
 
 brush
 
-fonts
+~~fonts~~
 
-color/paint
+~~color/paint~~
+
+***
+
+### 18/03/2018
+
+##### Polygon - update
+
+click on canvas to pin points, move to resize, preview with fill color
+
+hold shift when click to auto complete
+
+##### Dotted-line
+
+added dotted line on preview for straight line, hollow rectangle, circle, quad.curve
+
+##### Ellipse
+
+added ellipse function, need improvement
+
+##### Fonts
+
+implemented plugin from https://goldfirestudios.com/blog/108/CanvasInput-HTML5-Canvas-Text-Input
+
+mouse-down and drag to create input field, hit enter when done
+
+will allow options on font-size/family/color/align
+
+##### Canvas-common
+
+moved global var section to bottom, added more var
+
+***
+
+### 19/03/2018
+
+##### Paint
+
+implemented source code from https://jsfiddle.net/Fidel90/1e8e3z7e/
+
+add color option at line 117, color obj {r:255, g:255, b:255, a:1}
+
+bug: seems to crash sometime after sometime
+
+##### Default function
+
+set as pencil
+
+to avoid `VM20 canvas-common.js:41 Uncaught TypeError: Cannot read property 'moveEventFunction' of undefined`
+
+
 

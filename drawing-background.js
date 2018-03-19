@@ -11,10 +11,10 @@ class drawingBackground extends PaintFunction{
         this.contextBackground.fillRect(0,0,canvasDraft.width,canvasDraft.height);
     }
 
-    onMouseDown(){}
-    onDragging(){}
-    onMouseMove(){}
-    onMouseUp(){}
-    onMouseLeave(){}
-    onMouseEnter(){}
+    // onMouseDown(){}
+    // onDragging(){}
+    // onMouseMove(){}
+    // onMouseUp(){}
+    // onMouseLeave(){}
+    // onMouseEnter(){}
 }

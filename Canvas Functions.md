@@ -1,0 +1,102 @@
+# Canvas Functions
+
+##### Rectangle / Square (solid & hollow)
+
+mouse-down on canvas to start (top-left), drag to resize, mouse-up to draw, hold shift for square
+
+###### update 16/03/2018
+
+
+
+##### Straight line
+
+mouse-down on canvas to start (starting point), drag to resize (length), mouse-up to draw
+
+###### update 16/03/2018
+
+
+
+##### Quadratic Curve
+
+1st click on canvas to set starting point, 2nd click on canvas to set on point, mouse-down and drag to locate control point, mouse-up  to set control point and draw
+
+###### update 16/03/2018
+
+
+
+##### Circle
+
+mouse-down on canvas to set center, drag to size, mouse-up to finish
+
+###### update 16/03/2018
+
+
+
+##### Ellipse
+
+added ellipse function, need improvement
+
+###### update 18/03/2018
+
+
+
+##### Straight line
+
+mouse-down on canvas to start (starting point), drag to resize (length), mouse-up to draw
+
+###### update 16/03/2018
+
+
+
+##### Polygon
+
+click on canvas to pin points, move to resize, preview with fill color
+
+hold shift when click to auto complete
+
+###### update 18/03/2018
+
+
+
+##### Pencil
+
+mouse-down on canvas to start drawing, mouse-up to stop
+
+######update 16/03/2018
+
+
+
+##### Fonts
+
+mouse-down and drag to create input field, hit enter when done
+
+~~allow options on font-size/family/color/align~~
+
+###### update 18/03/2018
+
+
+
+##### Paint
+
+~~add color option at line 117~~
+
+~~bug: seems to crash sometime after idle~~
+
+###### update 19/03/2018
+
+
+
+##### Eraser
+
+mouse-down on canvas to start erasing, mouse-up to stop
+
+######update 16/03/2018
+
+
+
+##### Clear
+
+Reset the canvas
+
+######update 16/03/2018
+

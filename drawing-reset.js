@@ -9,10 +9,10 @@ class drawingReset extends PaintFunction{
         this.contextReal.clearRect(0,0,canvasDraft.width,canvasDraft.height);
     }
 
-    onMouseDown(){}
-    onDragging(){}
-    onMouseMove(){}
-    onMouseUp(){}
-    onMouseLeave(){}
-    onMouseEnter(){}
+    // onMouseDown(){}
+    // onDragging(){}
+    // onMouseMove(){}
+    // onMouseUp(){}
+    // onMouseLeave(){}
+    // onMouseEnter(){}
 }

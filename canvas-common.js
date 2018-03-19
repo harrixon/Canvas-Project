@@ -4,12 +4,6 @@ let canvasDraft = document.getElementById('canvas-draft');
 let contextDraft = canvasDraft.getContext('2d');
 let currentFunction;
 let dragging = false;
-let background = "#ffffff";
-let strokeColor = "rgba(22, 232, 199, 1)";
-let fillColor = "rgba(38, 255, 37, 0.5)";       // "rgba(128, 139, 255, 0)" = white, transparent
-let hollow;                                     // depends on input, need check mechanism
-let lineWidth = 2;                              // 1.0 up
-let lineJoin = "round";                         // "bevel" || "round" || "miter"
 
 $('#canvas-draft').mousedown(function(e){
     let mouseX = e.pageX - this.offsetLeft;
@@ -59,7 +53,29 @@ class PaintFunction{
     onDragging(){}
     onMouseMove(){}
     onMouseUp(){}
-    onMouseLeave(){}
+    onMouseLeave(){console.log("mouse leave");}
     onMouseEnter(){}
     // onDoubleClick(){}
 }
+
+
+// global var
+// functional
+let hollow;                                     // depends on input, need check mechanism
+
+// line
+let lineWidth = 2;                              // 1.0 up
+let lineJoin = "round";                         // "bevel" || "round" || "miter"
+
+//color
+// let paintColor = {r: 255, g: 255, b:255, a: 1};  // for drawing-paint.js
+let background = "white";      // CSS style string
+let strokeColor = "rgba(22, 232, 199, 1)";
+let fillColor = "rgba(38, 255, 37, 0.5)";       // "rgba(128, 139, 255, 0)" = white, transparent
+
+//font
+var textAlign = "start";
+var textBaseline = "bottom";
+var fontSize = "48px";
+var fontFamily = "Georgia";
+var fontColor = "black";

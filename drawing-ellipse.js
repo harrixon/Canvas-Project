@@ -1,8 +1,8 @@
-class DrawingCircle extends PaintFunction{
+class DrawingEllipse extends PaintFunction{
     constructor(contextReal,contextDraft){
         super();
         this.contextReal = contextReal;
-        this.contextDraft = contextDraft;            
+        this.contextDraft = contextDraft; 
         // style
         this.contextDraft.lineWidth = lineWidth;
         this.contextDraft.strokeStyle = strokeColor;
@@ -13,15 +13,19 @@ class DrawingCircle extends PaintFunction{
     }
     
     onMouseDown(coord, event){
-        this.centerX = coord[0];
-        this.centerY = coord[1];
+        this.topX = coord[0];
+        this.topY = coord[1];
     }
+
     onDragging(coord, event){
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-        this.radius = Math.sqrt( Math.pow(this.centerX - coord[0] , 2) + Math.pow(this.centerY - coord[1], 2) );
+        this.centerX = (this.topX + coord[0]) / 2;
+        this.centerY = (this.topY + coord[1]) / 2;
+        this.radiusX = Math.abs((this.topX - coord[0]) * 0.3);
+        this.radiusY = Math.abs((this.topY - coord[1]) * 0.7);
         this.contextDraft.beginPath();
         this.contextDraft.setLineDash([5,10]);
-        this.contextDraft.arc(this.centerX, this.centerY, this.radius, 0, 2*Math.PI, false);
+        this.contextDraft.ellipse(this.centerX, this.centerY, this.radiusX, this.radiusY, 0, 2*Math.PI, false);
         this.contextDraft.stroke();
         this.contextDraft.setLineDash([]);
         this.contextDraft.fill();
@@ -29,9 +33,12 @@ class DrawingCircle extends PaintFunction{
 
     onMouseUp(coord, event){
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-        this.radius = Math.sqrt( Math.pow(this.centerX - coord[0] , 2) + Math.pow(this.centerY - coord[1], 2) );
+        this.centerX = (this.topX + coord[0]) / 2;
+        this.centerY = (this.topY + coord[1]) / 2;
+        this.radiusX = Math.abs((this.topX - coord[0]) * 0.3);
+        this.radiusY = Math.abs((this.topY - coord[1]) * 0.7);
         this.contextReal.beginPath();
-        this.contextReal.arc(this.centerX, this.centerY, this.radius, 0, 2*Math.PI, false);
+        this.contextReal.ellipse(this.topX, this.topY, this.radiusX, this.radiusY, 0, 2*Math.PI, false);
         this.contextReal.stroke();
         this.contextReal.fill();
     }
@@ -41,13 +48,8 @@ class DrawingCircle extends PaintFunction{
     // onMouseEnter(){}
 }
 
-
-
-
-
-
 // alt: ref pt on click, not coner
-// this.cX = (this.centerX + coord[0]) / 2;
-// this.cY = (this.centerY + coord[1]) / 2;
-// this.r = ( (coord[0] - this.centerX) ) / 2;
+// this.cX = (this.topX + coord[0]) / 2;
+// this.cY = (this.topY + coord[1]) / 2;
+// this.r = ( (coord[0] - this.topX) ) / 2;
 // this.contextDraft.arc(this.cX, this.cY, this.r, 0, 2*Math.PI, false);
