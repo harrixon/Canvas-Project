@@ -52,7 +52,8 @@ $('#drawing-redo').click(()=>{
     cRedo();
 });
 $('#drawing-background').click(()=>{
-    currentFunction = new DrawingBackground(contextReal); // context-bg
+    setBackground();
+    // currentFunction = new DrawingBackground(contextReal); // context-bg
 });
 // $('#set-stroke-color').click(()=>{
 //     strokeColor = `rgba(125, 125, 125, 1)`;
