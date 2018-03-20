@@ -36,6 +36,9 @@ $('#drawing-font').click(()=>{
 $('#drawing-paint').click(()=>{
     currentFunction = new DrawingPaint(contextReal,contextDraft);
 });
+$('#drawing-eye-dropper').click(()=>{
+    currentFunction = new DrawingEyeDropper(contextReal,contextDraft);
+});
 $('#drawing-eraser').click(()=>{
     currentFunction = new DrawingEraser(contextReal,contextDraft);
 });
@@ -50,6 +53,9 @@ $('#drawing-undo').click(()=>{
 });
 $('#drawing-redo').click(()=>{
     cRedo();
+});
+$('#drawing-filter').click(()=>{
+    filter();
 });
 $('#drawing-background').on("change", function(event){
     setBackground(event);
