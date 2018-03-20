@@ -51,9 +51,8 @@ $('#drawing-undo').click(()=>{
 $('#drawing-redo').click(()=>{
     cRedo();
 });
-$('#drawing-background').click(()=>{
-    setBackground();
-    // currentFunction = new DrawingBackground(contextReal); // context-bg
+$('#drawing-choose-file').on("change", function(event){
+    setBackground(event);
 });
 // $('#set-stroke-color').click(()=>{
 //     strokeColor = `rgba(125, 125, 125, 1)`;

@@ -70,7 +70,7 @@ let lineJoin = "round";                         // "bevel" || "round" || "miter"
 //color
 // let paintColor = {r: 255, g: 255, b:255, a: 1};  // for drawing-paint.js
 let background = "white";      // CSS style string
-let strokeColor = "rgba(22, 232, 199, 1)";
+let strokeColor = "hsl(199, 50%,50%)";
 let fillColor = "rgba(38, 255, 37, 0.5)";       // "rgba(128, 139, 255, 0)" = white, transparent
 
 //font
