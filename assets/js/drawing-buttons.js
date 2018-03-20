@@ -54,8 +54,14 @@ $('#drawing-undo').click(()=>{
 $('#drawing-redo').click(()=>{
     cRedo();
 });
-$('#drawing-filter').click(()=>{
-    filter();
+$('#drawing-filter-GY').click(()=>{
+    filter("grayscale");
+});
+$('#drawing-filter-BRUP').click(()=>{
+    filter("brightnessUp");
+});
+$('#drawing-filter-BRDN').click(()=>{
+    filter("brightnessDown");
 });
 $('#drawing-background').on("change", function(event){
     setBackground(event);
