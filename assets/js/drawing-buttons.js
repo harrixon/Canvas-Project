@@ -51,7 +51,7 @@ $('#drawing-undo').click(()=>{
 $('#drawing-redo').click(()=>{
     cRedo();
 });
-$('#drawing-choose-file').on("change", function(event){
+$('#drawing-background').on("change", function(event){
     setBackground(event);
 });
 // $('#set-stroke-color').click(()=>{
