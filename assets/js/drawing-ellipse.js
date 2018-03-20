@@ -3,6 +3,9 @@ class DrawingEllipse extends PaintFunction{
         super();
         this.contextReal = contextReal;
         this.contextDraft = contextDraft; 
+    }
+    
+    onMouseDown(coord, event){
         // style
         this.contextDraft.lineWidth = lineWidth;
         this.contextDraft.strokeStyle = strokeColor;
@@ -10,9 +13,7 @@ class DrawingEllipse extends PaintFunction{
         this.contextReal.lineWidth = lineWidth;
         this.contextReal.strokeStyle = strokeColor;
         this.contextReal.fillStyle = fillColor;
-    }
-    
-    onMouseDown(coord, event){
+        // top pt
         startX = coord[0];
         startY = coord[1];
         dragging = true;

@@ -3,6 +3,9 @@ class DrawingLine extends PaintFunction{
         super();
         this.contextReal = contextReal;    
         this.contextDraft = contextDraft;        
+    }
+    
+    onMouseDown(coord, event){
         // style
         this.contextDraft.strokeStyle = strokeColor;
         this.contextDraft.lineJoin = lineJoin;
@@ -10,9 +13,6 @@ class DrawingLine extends PaintFunction{
         this.contextReal.strokeStyle = strokeColor;
         this.contextReal.lineJoin = lineJoin;
         this.contextReal.lineWidth = lineWidth;
-    }
-
-    onMouseDown(coord, event){
         // starting pt
         this.origX = coord[0];
         this.origY = coord[1];

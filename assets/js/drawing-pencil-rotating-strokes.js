@@ -2,13 +2,14 @@ class DrawingPencilRotatingStrokes extends PaintFunction{
     constructor(contextReal){
         super();
         this.context = contextReal;            
+    }
+    
+    onMouseDown(coord,event){
         // style
         this.context.strokeStyle = strokeColor;
         this.context.lineJoin = lineJoin;
         this.context.lineWidth = lineWidth;
-    }
-    
-    onMouseDown(coord,event){
+        
         isDrawing = true;
         lastPoint = { x: event.clientX, y: event.clientY };
     }

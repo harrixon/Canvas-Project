@@ -2,13 +2,14 @@ class DrawingEraser extends PaintFunction{
     constructor(contextReal){
         super();
         this.context = contextReal;            
+    }
+    
+    onMouseDown(coord,event){
         // style
         this.context.strokeStyle = background;
         this.context.lineJoin = lineJoin;
         this.context.lineWidth = lineWidth;
-    }
-    
-    onMouseDown(coord,event){
+        // start
         this.context.beginPath();
         this.context.moveTo(coord[0],coord[1]);
         this.draw(coord[0],coord[1]);
@@ -17,10 +18,10 @@ class DrawingEraser extends PaintFunction{
         this.draw(coord[0],coord[1]);
     }
 
-    // onMouseMove(){}
     onMouseUp(coord,event){
         cPush();
     }
+    // onMouseMove(){}
     // onMouseLeave(){}
     // onMouseEnter(){}
 

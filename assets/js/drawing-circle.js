@@ -3,6 +3,9 @@ class DrawingCircle extends PaintFunction{
         super();
         this.contextReal = contextReal;
         this.contextDraft = contextDraft;            
+    }
+    
+    onMouseDown(coord, event){
         // style
         this.contextDraft.lineWidth = lineWidth;
         this.contextDraft.strokeStyle = strokeColor;
@@ -10,12 +13,11 @@ class DrawingCircle extends PaintFunction{
         this.contextReal.lineWidth = lineWidth;
         this.contextReal.strokeStyle = strokeColor;
         this.contextReal.fillStyle = fillColor;
-    }
-    
-    onMouseDown(coord, event){
+        // pin center
         this.centerX = coord[0];
         this.centerY = coord[1];
     }
+    
     onDragging(coord, event){
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
         this.radius = Math.sqrt( Math.pow(this.centerX - coord[0] , 2) + Math.pow(this.centerY - coord[1], 2) );

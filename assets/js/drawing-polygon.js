@@ -6,6 +6,9 @@ class DrawingPolygon extends PaintFunction{
         this.continue = true;
         this.pointX = [];
         this.pointY = [];
+    }
+    
+    onMouseUp(coord, event){
         // style
         this.contextDraft.strokeStyle = strokeColor;
         this.contextDraft.lineJoin = lineJoin;
@@ -15,9 +18,7 @@ class DrawingPolygon extends PaintFunction{
         this.contextReal.lineJoin = lineJoin;
         this.contextReal.lineWidth = lineWidth;
         this.contextReal.fillStyle = fillColor;
-    }
-
-    onMouseUp(coord, event){
+        // pin first point
         this.pointX.push(coord[0]);
         this.pointY.push(coord[1]);
         if (this.continue)

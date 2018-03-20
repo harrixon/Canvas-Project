@@ -4,6 +4,9 @@ class DrawingQuadraticCurve extends PaintFunction{
         this.contextReal = contextReal;
         this.contextDraft = contextDraft;            
         this.status = "start";              // 1. start -> end / 2. ref
+    }
+    
+    onMouseDown(coord, event){
         // style
         this.contextDraft.lineWidth = lineWidth;
         this.contextDraft.strokeStyle = strokeColor;
@@ -11,9 +14,6 @@ class DrawingQuadraticCurve extends PaintFunction{
         this.contextReal.lineWidth = lineWidth;
         this.contextReal.strokeStyle = strokeColor;
         this.contextReal.fillStyle = fillColor;
-    }
-
-    onMouseDown(coord, event){
         // get starting pt
         if (this.status == "start")
         {
