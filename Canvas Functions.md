@@ -80,7 +80,7 @@ mouse-down and drag to create input field, hit enter when done
 
 ~~add color option at line 117~~
 
-~~bug: seems to crash sometime after idle~~
+bug: seems to crash sometime 
 
 ###### update 19/03/2018
 
@@ -123,6 +123,16 @@ download canvas as jpg file
 upload image to browser and draw on canvas, auto zoom to fit canvas
 
 ###### update20/03/2018
+
+
+
+##### Image Filter
+
+now support : grayscale , brightness
+
+###### update20/03/2018
+
+
 
 
 

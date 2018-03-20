@@ -199,7 +199,7 @@ outline ready, color-pad ready 90%, color value get, fail to pass to global var
 
 improved UX
 
+##### Img Filter
 
-
-
+now support grayscale and brightness
 
