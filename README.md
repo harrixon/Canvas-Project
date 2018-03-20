@@ -58,12 +58,12 @@ display
 
 ***
 
-### Maybe
+### ~~Maybe~~ 	TODO
 
-- Different type of brush in this [article](http://perfectionkills.com/exploring-canvas-drawing-techniques/)
-
-1. DL / UL
-2. Background img / filter (probably not)
+1. ~~DL / UL~~	done
+2. ~~Background img~~ done
+3.  filter
+4. Different type of brush in this [article](http://perfectionkills.com/exploring-canvas-drawing-techniques/) (1 available now)
 3. Mobile Support
 
 
@@ -178,6 +178,26 @@ implemented, but with bugs
 ##### Eraser
 
 fixed `.lineJoin = "round"` not rendered
+
+***
+
+### 20/03/2018
+
+##### Redo Undo
+
+debugged
+
+##### Load image as background
+
+implemented
+
+##### UI
+
+outline ready, color-pad ready 90%, color value get, fail to pass to global var
+
+##### Quad.curve
+
+improved UX
 
 
 

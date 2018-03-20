@@ -18,9 +18,9 @@ mouse-down on canvas to start (starting point), drag to resize (length), mouse-u
 
 ##### Quadratic Curve
 
-1st click on canvas to set starting point, 2nd click on canvas to set on point, mouse-down and drag to locate control point, mouse-up  to set control point and draw
+mouse-down on canvas to set starting point, drag, mouse-up to set end point, move mouse to locate control point with preview, click to set control point and draw
 
-###### update 16/03/2018
+###### update 20/03/2018
 
 
 
@@ -107,6 +107,24 @@ Reset the canvas
 go 1 step back/forward
 
 ###### update 19/03/2018
+
+
+
+##### Save
+
+download canvas as jpg file
+
+###### update20/03/2018
+
+
+
+##### Set Background
+
+upload image to browser and draw on canvas, auto zoom to fit canvas
+
+###### update20/03/2018
+
+
 
 
 
