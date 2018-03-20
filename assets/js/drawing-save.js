@@ -1,15 +1,11 @@
-// $('#save').click(function() {
-//         var gh = canvasDraft.toDataURL('png');
-//         var a  = document.createElement('a');
-//         a.href = gh;
-//         a.download = 'image.png';
-//         a.click();
-//      });
+function saveAsImage() {
+    canvasReal.toBlob(function(blob) {
+        var newImg = document.createElement('img');
+        url = URL.createObjectURL(blob);
 
-function saveAsImage(contextReal){
-	var gh = canvasReal.toDataURL('png');
-	var a  = document.createElement('a');
-	a.href = gh;
-	a.download = 'image.png';
-	a.click();
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'image.jpg';
+        a.click();
+        });
 }
