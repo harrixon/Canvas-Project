@@ -31,62 +31,57 @@ ctx2.fillStyle = grd1;
 ctx2.fill();
 
 function click(e) {
-  x = e.offsetX;
-  y = e.offsetY;
-  var imageData = ctx2.getImageData(x, y, 1, 1).data;
-  rgbaColor = 'rgba(' + imageData[0] + ',' + imageData[1] + ',' + imageData[2] + ',1)';
-  fillGradient();
+	x = e.offsetX;
+	y = e.offsetY;
+	var imageData = ctx2.getImageData(x, y, 1, 1).data;
+	rgbaColor = 'rgba(' + imageData[0] + ',' + imageData[1] + ',' + imageData[2] + ',1)';
+	fillGradient();
 }
 
 function fillGradient() {
-  ctx1.fillStyle = rgbaColor;
-  ctx1.fillRect(0, 0, width1, height1);
+	ctx1.fillStyle = rgbaColor;
+	ctx1.fillRect(0, 0, width1, height1);
 
-  var grdWhite = ctx2.createLinearGradient(0, 0, width1, 0);
-  grdWhite.addColorStop(0, 'rgba(255,255,255,1)');
-  grdWhite.addColorStop(1, 'rgba(255,255,255,0)');
-  ctx1.fillStyle = grdWhite;
-  ctx1.fillRect(0, 0, width1, height1);
+	var grdWhite = ctx2.createLinearGradient(0, 0, width1, 0);
+	grdWhite.addColorStop(0, 'rgba(255,255,255,1)');
+	grdWhite.addColorStop(1, 'rgba(255,255,255,0)');
+	ctx1.fillStyle = grdWhite;
+	ctx1.fillRect(0, 0, width1, height1);
 
-  var grdBlack = ctx2.createLinearGradient(0, 0, 0, height1);
-  grdBlack.addColorStop(0, 'rgba(0,0,0,0)');
-  grdBlack.addColorStop(1, 'rgba(0,0,0,1)');
-  ctx1.fillStyle = grdBlack;
-  ctx1.fillRect(0, 0, width1, height1);
+	var grdBlack = ctx2.createLinearGradient(0, 0, 0, height1);
+	grdBlack.addColorStop(0, 'rgba(0,0,0,0)');
+	grdBlack.addColorStop(1, 'rgba(0,0,0,1)');
+	ctx1.fillStyle = grdBlack;
+	ctx1.fillRect(0, 0, width1, height1);
 }
 
 function mousedown(e) {
-  drag = true;
-  changeColor(e);
+	drag = true;
+	changeColor(e);
 }
 
 function mousemove(e) {
-  if (drag) {
-    changeColor(e);
-  }
+	if (drag) {
+		changeColor(e);
+	}
 }
 
 function mouseup(e) {
-  drag = false;
+	drag = false;
 }
 
 function changeColor(e) {
-  x = e.offsetX;
-  y = e.offsetY;
-  var imageData = ctx1.getImageData(x, y, 1, 1).data;
-  rgbaColor = 'rgba(' + imageData[0] + ',' + imageData[1] + ',' + imageData[2] + ',1)';
-  console.log(rgbaColor);
-  if (stroke == true){
-      console.log("stroke");
-      strokeColor = rgbaColor;
-  }else if (fill == true){
-      console.log("fill");
-       fillColor = rgbaColor;
-      }
-  }
-  stroke=false;
-  fill=false;
-
+	x = e.offsetX;
+	y = e.offsetY;
+	var imageData = ctx1.getImageData(x, y, 1, 1).data;
+	rgbaColor = 'rgba(' + imageData[0] + ',' + imageData[1] + ',' + imageData[2] + ',1)';
+	console.log(rgbaColor);
+	if (stroke) {
+		strokeColor = rgbaColor;
+	} else if (fill) {
+		fillColor = rgbaColor;
+	}
+}
 
 colorStrip.addEventListener("click", click, false);
 

@@ -124,41 +124,39 @@ $('#width6').click(()=>{
 
 $(".b1").on("click", function(event){
     stroke = true;
-    console.log(stroke);
+    fill = false;
+    console.log("stroke : ", stroke);
 });
 
 $(".b2").on("click", function(){
+    stroke = false;
     fill = true;
-
+    console.log("fill : ", fill);
 });
 
-    $(".b1, .b2").on("click", function(){
-        $('#color-picker').css("opacity","100")
+$(".b1, .b2").on("click", function(){
+    $('#color-picker').css("opacity","100")
 });
 
  $(".b1, .b2").on("dblclick", function(){
-        $('#color-picker').css("opacity","0")
-
+    $('#color-picker').css("opacity","0")
 });
 
 $('#drawing-pencil, #drawing-eraser, #drawing-polygon, #drawing-quadratic-curve').on("click", function(){
-        $('#width1, #width2, #width3, #width4, #width5, #width6').css("opacity","100");
-        $('#dotted').css("opacity","0");
-        lineDash =false; 
+    $('#width1, #width2, #width3, #width4, #width5, #width6').css("opacity","100");
+    $('#dotted').css("opacity","0");
+    lineDash = false; 
 });
 
 $('#drawing-line').on("click", function(){
-        $('#width1, #width2, #width3, #width4, #width5, #width6, #dotted').css("opacity","100")
+    $('#width1, #width2, #width3, #width4, #width5, #width6, #dotted').css("opacity","100")
 });
 
-
 $('#drawing-rectangle, #drawing-rectangle-hollow, #drawing-circle,#drawing-circle-hollow, #drawing-pencil-rotating-strokes, #drawing-font,#drawing-paint,#drawing-ellipse,#drawing-eye-dropper,#drawing-reset,#drawing-save').on("click", function(){
-        $('#width1, #width2, #width3, #width4, #width5, #width6,#dotted').css("opacity","0");
-         
+    $('#width1, #width2, #width3, #width4, #width5, #width6,#dotted').css("opacity","0");  
 });
 
 $('#drawing-undo, #drawing-redo, #drawing-zoom-in, #drawing-zoom-out, #drawing-reset, #drawing-save, #drawing-background, #toggle, #1,#2').on("click", function(){
-
-        $('#width1, #width2, #width3, #width4, #width5, #width6,#dotted').css("opacity","0");
-
+    $('#width1, #width2, #width3, #width4, #width5, #width6,#dotted').css("opacity","0");
 });
+
