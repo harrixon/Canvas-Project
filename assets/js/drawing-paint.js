@@ -108,8 +108,33 @@ function paintBucketApp(e)
     // canvas.onclick = function (e) {
         var startX = e.clientX - 10;
         var startY = e.clientY - 10;
-        var paintcolor = {r:255, g:0, b:128, a:1};
-        console.log(paintcolor);
+
+    var sameColor = function(x, y){
+        // px color
+        var pin = contextReal.getImageData(x, y, 1, 1).data;
+        console.log(`pin: ${pin}`);
+        var paint = fillColor.match(/\d+/g);
+        console.log(`paint: ${paint}`);
+        if (pin[0] == paint[0] &&
+            pin[1] == paint[1] &&
+            pin[2] == paint[2])
+        {
+            console.log("same");
+            return true;
+        }
+        else
+        {
+            console.log("!same");
+            paintcolor = {r: paint[0], g: paint[1], b: paint[2] , a: 1};
+            console.log(paintcolor);
+            return false;
+        }
+    };
+
+    var paintcolor;
+    // console.log(paintcolor);
+    if (!sameColor(startX, startY))
+    {
         floodFill(startX, startY, paintcolor);
-    // };
+    }
 };
