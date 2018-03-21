@@ -6,25 +6,27 @@ let currentFunction;
 let dragging = false;
 
 $('#canvas-draft').mousedown(function(e){
-    let mouseX = e.pageX - this.offsetLeft;
-    let mouseY = e.pageY - this.offsetTop;
+    let mouseX = e.offsetX;
+    let mouseY = e.offsetY;
     currentFunction.onMouseDown([mouseX,mouseY],e);
     dragging = true;
+    
 });
 
 $('#canvas-draft').mousemove(function(e){
-    let mouseX = e.pageX - this.offsetLeft;
-    let mouseY = e.pageY - this.offsetTop;
+    let mouseX = e.offsetX;
+    let mouseY = e.offsetY;
     if(dragging){
         currentFunction.onDragging([mouseX,mouseY],e);
     }
     currentFunction.onMouseMove([mouseX,mouseY],e);
+
 });
 
 $('#canvas-draft').mouseup(function(e){
     dragging = false;
-    let mouseX = e.pageX - this.offsetLeft;
-    let mouseY = e.pageY - this.offsetTop;
+    let mouseX = e.offsetX;
+    let mouseY = e.offsetY;
     currentFunction.onMouseUp([mouseX,mouseY],e);
 });
 
@@ -38,23 +40,17 @@ $('#canvas-draft').mouseleave(function(e){
     else
     {
         dragging = false;
-        let mouseX = e.pageX - this.offsetLeft;
-        let mouseY = e.pageY - this.offsetTop;
+        let mouseX = e.offsetX;
+        let mouseY = e.offsetY;
         currentFunction.onMouseLeave([mouseX,mouseY],e);
     }
 });
 
 $('#canvas-draft').mouseenter(function(e){
-    let mouseX = e.pageX - this.offsetLeft;
-    let mouseY = e.pageY - this.offsetTop;
+    let mouseX = e.offsetX;
+    let mouseY = e.offsetY;
     currentFunction.onMouseEnter([mouseX,mouseY],e);
 });
-
-// $('#canvas-draft').dblclick(function(e){
-//     let mouseX = e.pageX - this.offsetLeft;
-//     let mouseY = e.pageY - this.offsetTop;
-//     currentFunction.onDoubleClick([mouseX,mouseY],e);
-// });
 
 class PaintFunction{
     constructor(){}
@@ -62,11 +58,9 @@ class PaintFunction{
     onDragging(){}
     onMouseMove(){}
     onMouseUp(){}
-    onMouseLeave(){console.log("mouse leave");}
+    onMouseLeave(){}
     onMouseEnter(){}
-    // onDoubleClick(){}
 }
-
 
 // global var
 // functional
@@ -76,11 +70,11 @@ let outbound = false;                           // prevent stuck when mouse-out
 // line
 let lineWidth = 5;                              // 1.0 up
 let lineJoin = "round";                         // "bevel" || "round" || "miter"
-let lineDash = true;
+let lineDash = false;
 
 //color
 // let paintColor = {r: 255, g: 255, b:255, a: 1};  // for drawing-paint.js
-let background = "white";      // CSS style string
+let background = "whitesmoke";      // CSS style string
 let strokeColor = "hsl(199, 50%,50%)";
 let fillColor = "rgba(255, 0, 44, 1)";       // "rgba(128, 139, 255, 0)" = white, transparent
 
@@ -90,3 +84,7 @@ var textBaseline = "bottom";
 var fontSize = "48px";
 var fontFamily = "Georgia";
 var fontColor = "black";
+
+//color pad
+let chosenColor = rgbaColor;
+let stroke, fill;

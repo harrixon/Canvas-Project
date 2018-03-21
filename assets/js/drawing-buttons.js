@@ -33,7 +33,8 @@ $('#drawing-pencil').click(()=>{
     currentFunction = new DrawingPencil(contextReal,contextDraft);
 });
 $('#drawing-pencil-rotating-strokes').click(()=>{
-    currentFunction = new DrawingPencilRotatingStrokes(contextReal,contextDraft);
+    // currentFunction = new DrawingPencilRotatingStrokes(contextReal,contextDraft);
+    currentFunction = new DrawingPencilRotatingStars(contextReal,contextDraft);
 });
 $('#drawing-pencil-rotating-stars').click(()=>{
     currentFunction = new DrawingPencilRotatingStars(contextReal,contextDraft);
@@ -89,9 +90,75 @@ $('#drawing-filter-convolute-blur').click(()=>{
 $('#drawing-background').on("change", function(event){
     setBackground(event);
 });
-// $('#set-stroke-color').click(()=>{
-//     strokeColor = `rgba(125, 125, 125, 1)`;
-// });
-// $('#set-fill-color').click(()=>{
-//     fillColor = `rgba(200, 200, 200, 0.5)`;
-// });
+
+// ========================
+
+$('#width1').click(()=>{
+    lineWidth= 0.5 ;
+});
+
+$('#width2').click(()=>{ 
+    lineWidth= 1 ;
+});
+
+$('#width3').click(()=>{   
+    lineWidth= 2.5 ;
+});
+
+$('#width4').click(()=>{
+    lineWidth= 5 ;
+});
+
+$('#width5').click(()=>{
+    lineWidth= 10 ;
+});
+
+$('#width6').click(()=>{
+    lineWidth= 15 ;
+});
+
+ $('#dotted').click(()=>{
+    lineDash = (lineDash ? false : true);
+});
+
+
+$(".b1").on("click", function(event){
+    stroke = true;
+    console.log(stroke);
+});
+
+$(".b2").on("click", function(){
+    fill = true;
+
+});
+
+    $(".b1, .b2").on("click", function(){
+        $('#color-picker').css("opacity","100")
+});
+
+ $(".b1, .b2").on("dblclick", function(){
+        $('#color-picker').css("opacity","0")
+
+});
+
+$('#drawing-pencil, #drawing-eraser, #drawing-polygon, #drawing-quadratic-curve').on("click", function(){
+        $('#width1, #width2, #width3, #width4, #width5, #width6').css("opacity","100");
+        $('#dotted').css("opacity","0");
+        lineDash =false; 
+});
+
+$('#drawing-line').on("click", function(){
+        $('#width1, #width2, #width3, #width4, #width5, #width6, #dotted').css("opacity","100")
+});
+
+
+$('#drawing-rectangle, #drawing-rectangle-hollow, #drawing-circle,#drawing-circle-hollow, #drawing-pencil-rotating-strokes, #drawing-font,#drawing-paint,#drawing-ellipse,#drawing-eye-dropper,#drawing-reset,#drawing-save').on("click", function(){
+        $('#width1, #width2, #width3, #width4, #width5, #width6,#dotted').css("opacity","0");
+         
+});
+
+$('#drawing-undo, #drawing-redo, #drawing-zoom-in, #drawing-zoom-out, #drawing-reset, #drawing-save, #drawing-background, #toggle, #1,#2').on("click", function(){
+
+        $('#width1, #width2, #width3, #width4, #width5, #width6,#dotted').css("opacity","0");
+
+});
