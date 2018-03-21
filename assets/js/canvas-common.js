@@ -66,6 +66,7 @@ let hollow;                                     // depends on input, need check 
 // line
 let lineWidth = 2;                              // 1.0 up
 let lineJoin = "round";                         // "bevel" || "round" || "miter"
+let lineDash = true;
 
 //color
 // let paintColor = {r: 255, g: 255, b:255, a: 1};  // for drawing-paint.js

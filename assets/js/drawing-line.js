@@ -44,10 +44,16 @@ class DrawingLine extends PaintFunction{
     }
 
     drawReal(x,y){
+        if (lineDash){
+            this.contextReal.setLineDash([2,8]);
+        }
         this.contextReal.beginPath();
         this.contextReal.moveTo(this.origX, this.origY);
         this.contextReal.lineTo(x, y);
         this.contextReal.closePath();
         this.contextReal.stroke();    
+        if (lineDash){
+            this.contextReal.setLineDash([]);
+        }
     }
 }
