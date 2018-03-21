@@ -78,8 +78,10 @@ function changeColor(e) {
 	console.log(rgbaColor);
 	if (stroke) {
 		strokeColor = rgbaColor;
+		$(".b1").attr("style", `background-color: ${strokeColor}`);
 	} else if (fill) {
 		fillColor = rgbaColor;
+		$(".b2").attr("style", `background-color: ${fillColor}`);
 	}
 }
 
