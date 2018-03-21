@@ -142,5 +142,11 @@ click on canvas, set color of clicked pixel as stroke's color and fill's color
 
 
 
+##### Zoom In/Out
+
+click on canvas to zoom in / out
+
+
+
 
 

@@ -231,3 +231,9 @@ Fixed crush bug
 
 action will resume after dragging out of then back into canvas(without releasing)
 
+##### Zoom in / out
+
+added feature
+
+note: quality will lower after zooming out
+
