@@ -13,6 +13,11 @@ $('#drawing-quadratic-curve').click(()=>{
     currentFunction = new DrawingQuadraticCurve(contextReal,contextDraft);
 });
 $('#drawing-circle').click(()=>{
+    hollow = false;     // to be set by fillcolor
+    currentFunction = new DrawingCircle(contextReal,contextDraft);
+});
+$('#drawing-circle-hollow').click(()=>{
+    hollow = true;      // to be set by fillcolor
     currentFunction = new DrawingCircle(contextReal,contextDraft);
 });
 $('#drawing-ellipse').click(()=>{

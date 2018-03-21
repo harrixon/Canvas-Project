@@ -26,7 +26,10 @@ class DrawingCircle extends PaintFunction{
         this.contextDraft.arc(this.centerX, this.centerY, this.radius, 0, 2*Math.PI, false);
         this.contextDraft.stroke();
         this.contextDraft.setLineDash([]);
-        this.contextDraft.fill();
+        if (!hollow)
+        {
+            this.contextDraft.fill();
+        }
     }
 
     onMouseUp(coord, event){
@@ -35,7 +38,10 @@ class DrawingCircle extends PaintFunction{
         this.contextReal.beginPath();
         this.contextReal.arc(this.centerX, this.centerY, this.radius, 0, 2*Math.PI, false);
         this.contextReal.stroke();
-        this.contextReal.fill();
+        if (!hollow)
+        {
+            this.contextReal.fill();
+        }
         cPush();
     }
 
