@@ -134,6 +134,12 @@ now support : grayscale , brightness
 
 
 
+##### Eye Dropper
+
+click on canvas, set color of clicked pixel as stroke's color and fill's color
+
+###### update21/03/2018
+
 
 
 

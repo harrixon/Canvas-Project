@@ -203,3 +203,19 @@ improved UX
 
 now support grayscale and brightness
 
+##### Custom Color on drawing
+
+bug fixed
+
+##### Color Pad
+
+almost ready
+
+***
+
+### 21/03/2018
+
+##### eye-dropper
+
+added, will set color to `strokeColor` and `fillColor`
+
