@@ -19,9 +19,9 @@ class DrawingLine extends PaintFunction{
     }
 
     onDragging(coord, event){
-            this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-            this.contextDraft.setLineDash([5,10]);
-            this.drawDraft(coord[0],coord[1]);
+        this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+        this.contextDraft.setLineDash([5,10]);
+        this.drawDraft(coord[0],coord[1]);
     }
 
     onMouseUp(coord, event){
