@@ -1,5 +1,5 @@
 $(document).ready(()=>{
-    currentFunction = new DrawingPencil(contextReal,contextDraft);
+    currentFunction = new DrawingLine(contextReal,contextDraft);
 });
 $('#drawing-rectangle').click(()=>{
     hollow = false;     // to be set by fillcolor
@@ -52,6 +52,12 @@ $('#drawing-eraser').click(()=>{
 });
 $('#drawing-reset').click(()=>{
     currentFunction = new DrawingReset(contextReal);
+});
+$('#drawing-zoomIn').click(()=>{
+    currentFunction = new DrawingZoomIn(contextReal);
+});
+$('#drawing-zoomOut').click(()=>{
+    currentFunction = new DrawingZoomOut(contextReal);
 });
 $('#drawing-save').click(()=>{
     saveAsImage(contextReal);

@@ -74,7 +74,7 @@ let hollow;                                     // depends on input, need check 
 let outbound = false;                           // prevent stuck when mouse-out
 
 // line
-let lineWidth = 50;                              // 1.0 up
+let lineWidth = 5;                              // 1.0 up
 let lineJoin = "round";                         // "bevel" || "round" || "miter"
 let lineDash = true;
 
