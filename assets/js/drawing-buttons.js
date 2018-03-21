@@ -35,6 +35,9 @@ $('#drawing-pencil').click(()=>{
 $('#drawing-pencil-rotating-strokes').click(()=>{
     currentFunction = new DrawingPencilRotatingStrokes(contextReal,contextDraft);
 });
+$('#drawing-pencil-rotating-stars').click(()=>{
+    currentFunction = new DrawingPencilRotatingStars(contextReal,contextDraft);
+});
 $('#drawing-font').click(()=>{
     currentFunction = new DrawingFont(contextReal,contextDraft);
 });
