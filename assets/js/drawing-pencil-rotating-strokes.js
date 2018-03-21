@@ -11,7 +11,7 @@ class DrawingPencilRotatingStrokes extends PaintFunction{
         this.context.lineWidth = lineWidth;
         
         isDrawing = true;
-        lastPoint = { x: event.clientX, y: event.clientY };
+        lastPoint = { x: coord[0], y: coord[1] };
     }
     onDragging(coord,event){
 
@@ -19,8 +19,9 @@ class DrawingPencilRotatingStrokes extends PaintFunction{
 
     onMouseMove(coord, event){
         if (!isDrawing) return;
-  
-        var currentPoint = { x: event.clientX, y: event.clientY };
+        console.log("ss");
+        // var currentPoint = { x: event.clientX, y: event.clientY };
+        var currentPoint = { x: coord[0], y: coord[1] };
         var dist = distanceBetween(lastPoint, currentPoint);
         var angle = angleBetween(lastPoint, currentPoint);
         

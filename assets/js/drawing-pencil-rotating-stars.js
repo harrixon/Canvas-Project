@@ -13,11 +13,11 @@ class DrawingPencilRotatingStars extends PaintFunction{
         // this.context.lineJoin = lineJoin;
         // this.context.lineWidth = lineWidth;
         // start
-        this.points.push({ x: event.clientX, y: event.clientY, angle: getRandomInt(0, 180) });
+        this.points.push({ x: coord[0], y: coord[1], angle: getRandomInt(0, 180) });
     }
 
     onDragging(coord,event){
-        this.points.push({ x: event.clientX, y: event.clientY, angle: getRandomInt(0, 180) });        
+        this.points.push({ x: coord[0], y: coord[1], angle: getRandomInt(0, 180) });        
         this.contextDraft.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         for (var i = 0; i < this.points.length; i++) {
             drawStar(this.points[i].x, this.points[i].y, this.points[i].angle, this.contextDraft);
@@ -48,6 +48,7 @@ function getRandomInt(min, max) {
 function drawStar(x, y, angle, context) {
     var ctx = context;
     var length = 15;
+    ctx.lineWidth = 2;
     ctx.lineJoin = ctx.lineCap = 'round';
     ctx.strokeStyle = 'purple';  // strokeColor
     ctx.save();

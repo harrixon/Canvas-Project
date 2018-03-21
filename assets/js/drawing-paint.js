@@ -106,8 +106,10 @@ function paintBucketApp(e)
     };
 
     // canvas.onclick = function (e) {
-        var startX = e.clientX - 10;
-        var startY = e.clientY - 10;
+        // var startX = e.clientX - 10;
+        // var startY = e.clientY - 10;
+        var startX = e.offsetX - 10;
+        var startY = e.offsetY - 10;
 
     var sameColor = function(x, y){
         // px color
