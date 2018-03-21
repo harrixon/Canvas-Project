@@ -29,10 +29,19 @@ $('#canvas-draft').mouseup(function(e){
 });
 
 $('#canvas-draft').mouseleave(function(e){
-    dragging = false;
-    let mouseX = e.pageX - this.offsetLeft;
-    let mouseY = e.pageY - this.offsetTop;
-    currentFunction.onMouseLeave([mouseX,mouseY],e);
+    if (dragging)
+    {
+        let mouseX = canvasDraft.width + canvasDraft.offsetLeft;
+        let mouseY = canvasDraft.height + canvasDraft.offsetTop;
+        currentFunction.onMouseLeave([mouseX,mouseY],e);
+    }
+    else
+    {
+        dragging = false;
+        let mouseX = e.pageX - this.offsetLeft;
+        let mouseY = e.pageY - this.offsetTop;
+        currentFunction.onMouseLeave([mouseX,mouseY],e);
+    }
 });
 
 $('#canvas-draft').mouseenter(function(e){
@@ -62,9 +71,10 @@ class PaintFunction{
 // global var
 // functional
 let hollow;                                     // depends on input, need check mechanism
+let outbound = false;                           // prevent stuck when mouse-out
 
 // line
-let lineWidth = 2;                              // 1.0 up
+let lineWidth = 50;                              // 1.0 up
 let lineJoin = "round";                         // "bevel" || "round" || "miter"
 let lineDash = true;
 
