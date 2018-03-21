@@ -63,6 +63,15 @@ $('#drawing-filter-BRUP').click(()=>{
 $('#drawing-filter-BRDN').click(()=>{
     filter("brightnessDown");
 });
+$('#drawing-filter-threshold').click(()=>{
+    filter("threshold");
+});
+$('#drawing-filter-convolute-sharpen').click(()=>{
+    filter("convolute-sharpen");
+});
+$('#drawing-filter-convolute-blur').click(()=>{
+    filter("convolute-blur");
+});
 $('#drawing-background').on("change", function(event){
     setBackground(event);
 });
