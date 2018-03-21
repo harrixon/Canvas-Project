@@ -219,3 +219,15 @@ almost ready
 
 added, will set color to `strokeColor` and `fillColor`
 
+##### Pencil style
+
+added new style
+
+##### Paint bucket
+
+Fixed crush bug
+
+##### Out of bound behavior
+
+action will resume after dragging out of then back into canvas(without releasing)
+

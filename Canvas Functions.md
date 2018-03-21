@@ -24,7 +24,7 @@ mouse-down on canvas to set starting point, drag, mouse-up to set end point, mov
 
 
 
-##### Circle
+##### Circle (solid & hollow)
 
 mouse-down on canvas to set center, drag to size, mouse-up to finish
 
