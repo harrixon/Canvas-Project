@@ -12,6 +12,7 @@ class DrawingEyeDropper extends PaintFunction{
         console.log("dropper : " + color);
         fillColor = color;
         strokeColor = color;
+        fontColor = color;
         $(".b1").attr("style", `background-color: ${strokeColor}`);
         $(".b2").attr("style", `background-color: ${fillColor}`);
     }

@@ -30,7 +30,7 @@ function initDrawingFont(x, y, w, bgColor){
         canvas: document.getElementById('canvas-text'),
         fontSize: 28,
         fontFamily: 'Arial',
-        fontColor: '#212121',
+        fontColor: fontColor,
         fontWeight: 'bold',
         x: x,
         y: y,

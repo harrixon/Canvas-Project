@@ -83,6 +83,7 @@ function changeColor(e) {
 		fillColor = rgbaColor;
 		$(".b2").attr("style", `background-color: ${fillColor}`);
 	}
+	fontColor = rgbaColor;
 }
 
 colorStrip.addEventListener("click", click, false);
