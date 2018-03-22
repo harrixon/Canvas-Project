@@ -34,10 +34,14 @@ $('#drawing-pencil').click(()=>{
 });
 $('#drawing-pencil-rotating-strokes').click(()=>{
     // currentFunction = new DrawingPencilRotatingStrokes(contextReal,contextDraft);
-    currentFunction = new DrawingPencilRotatingStars(contextReal,contextDraft);
+    currentFunction = new DrawingPencilRandomDots(contextReal,contextDraft);
 });
 $('#drawing-pencil-rotating-stars').click(()=>{
-    currentFunction = new DrawingPencilRotatingStars(contextReal,contextDraft);
+    // currentFunction = new DrawingPencilRotatingStars(contextReal,contextDraft);
+    currentFunction = new DrawingPencilRandomDots(contextReal,contextDraft);
+});
+$('#drawing-pencil-random-dots').click(()=>{
+    currentFunction = new DrawingPencilRandomDots(contextReal,contextDraft);
 });
 $('#drawing-font').click(()=>{
     currentFunction = new DrawingFont(contextReal,contextDraft);

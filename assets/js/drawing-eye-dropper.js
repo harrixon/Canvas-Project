@@ -9,7 +9,7 @@ class DrawingEyeDropper extends PaintFunction{
         // rgba(r, g, b, 255);
         // console.log(data);
         var color = `rgba( ${data[0]}, ${data[1]}, ${data[2]}, ${data[3]})`;
-        console.log(color);
+        console.log("dropper : " + color);
         fillColor = color;
         strokeColor = color;
         $(".b1").attr("style", `background-color: ${strokeColor}`);

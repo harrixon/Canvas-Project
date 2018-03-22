@@ -74,8 +74,8 @@ function changeColor(e) {
 	x = e.offsetX;
 	y = e.offsetY;
 	var imageData = ctx1.getImageData(x, y, 1, 1).data;
-	rgbaColor = 'rgba(' + imageData[0] + ',' + imageData[1] + ',' + imageData[2] + ',1)';
-	console.log(rgbaColor);
+	rgbaColor = 'rgba(' + imageData[0] + ',' + imageData[1] + ',' + imageData[2] + ',' + imageData[3] + ')';
+	console.log("pad : " + rgbaColor);
 	if (stroke) {
 		strokeColor = rgbaColor;
 		$(".b1").attr("style", `background-color: ${strokeColor}`);
