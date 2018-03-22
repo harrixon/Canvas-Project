@@ -16,8 +16,8 @@
 
         <div class="lc-drawing with-gui" style="background-color:whitesmoke;">
             <div id="canvas-container">
-                <canvas id="canvas-real" class="canvas" width="1444" height="864" style="width: 1444px; height: 864px;"></canvas>
-                <canvas id="canvas-draft" class="canvas" width="1444" height="864" style="background-color: transparent;"></canvas>
+                <canvas id="canvas-real" class="canvas" width="1444" height="864" style="width: 1444px; height: 864px; z-index: 1"></canvas>
+                <canvas id="canvas-draft" class="canvas" width="1444" height="864" style="z-index: 2; background-color: transparent;"></canvas>
             </div>
 
         </div>
@@ -385,6 +385,7 @@
     <script type='text/javascript' src="assets/js/drawing-background.js"></script>
     <script type='text/javascript' src="assets/js/drawing-filter.js"></script>
     <script type='text/javascript' src="assets/js/drawing-buttons.js"></script>
+    <script type='text/javascript' src="assets/js/zoom-pan.js"></script>
 </body>
 
 </html>

@@ -66,6 +66,7 @@ class PaintFunction{
 // functional
 let hollow;                                     // depends on input, need check mechanism
 let outbound = false;                           // prevent stuck when mouse-out
+let zooming = false;
 
 // line
 let lineWidth = 5;                              // 1.0 up

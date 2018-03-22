@@ -62,7 +62,21 @@ $('#drawing-zoom-in').click(()=>{
     currentFunction = new DrawingZoomIn(contextReal);
 });
 $('#drawing-zoom-out').click(()=>{
-    currentFunction = new DrawingZoomOut(contextReal);
+    // currentFunction = new DrawingZoomOut(contextReal);
+    if (!zooming)
+    {
+        zooming = true;
+        console.log("zoom: ", zooming);
+        // push canvas real up
+        zoompan();
+        $("#canvas-real").css("z-index","10");
+    }
+    else
+    {
+        zooming = false;
+        console.log("zoom: ", zooming);
+        $("#canvas-real").css("z-index","1");
+    }
 });
 $('#drawing-save').click(()=>{
     saveAsImage(contextReal);
