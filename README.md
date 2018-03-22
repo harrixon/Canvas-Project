@@ -249,14 +249,25 @@ fixes: update global var, click event offset, added dotted line toggle
 
 ##### Color pad
 
-fixed stroke/fill toggle, added live color to button
+fixed stroke/fill toggle, added live color to button, fixed bugs
 
 ##### To-do
 
-Save the resulting images to [Firebase Storage](https://firebase.google.com/)
+Save the resulting images to [Firebase Storage](https://firebase.google.com/) 
 
-add btns for sp pencil's choice
+~~add btns for sp pencil's choice~~	done
 
-quad curve
+~~quad curve~~	done
 
-will allow options on font-size/family/color/align
+~~will allow options on font-size/family/color/align~~ done
+
+##### Zoom and Pan
+
+transform ok
+
+offset solved
+
+still one bug
+
+##### Push to surge
+

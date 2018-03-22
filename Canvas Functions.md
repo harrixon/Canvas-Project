@@ -18,9 +18,9 @@ mouse-down on canvas to start (starting point), drag to resize (length), mouse-u
 
 ##### Quadratic Curve
 
-mouse-down on canvas to set starting point, drag, mouse-up to set end point, move mouse to locate control point with preview, click to set control point and draw
+mouse-down on canvas to set starting point, drag, mouse-up to set end point, move mouse to locate vertex with preview, click to draw
 
-###### update 20/03/2018
+###### update 21/03/2018
 
 
 
@@ -62,7 +62,9 @@ hold shift when click to auto complete
 
 mouse-down on canvas to start drawing, mouse-up to stop
 
-######update 16/03/2018
+also comes with special effect choice
+
+######update 22/03/2018
 
 
 
@@ -70,19 +72,15 @@ mouse-down on canvas to start drawing, mouse-up to stop
 
 mouse-down and drag to create input field, hit enter when done
 
-~~allow options on font-size/family/color/align~~
-
-###### update 18/03/2018
+###### update 22/03/2018
 
 
 
 ##### Paint
 
-~~add color option at line 117~~
+click on canvas to paint
 
-bug: seems to crash sometime 
-
-###### update 19/03/2018
+###### update 21/03/2018
 
 
 
@@ -128,23 +126,29 @@ upload image to browser and draw on canvas, auto zoom to fit canvas
 
 ##### Image Filter
 
-now support : grayscale , brightness
+now support : grayscale , brightness, threshold, convolution
 
-###### update20/03/2018
+###### update22/03/2018
 
 
 
 ##### Eye Dropper
 
-click on canvas, set color of clicked pixel as stroke's color and fill's color
+click on canvas, set color of clicked pixel as stroke's color and fill's color and font color
 
 ###### update21/03/2018
 
 
 
-##### Zoom In/Out
+##### Zoom In/Out Pan
 
-click on canvas to zoom in / out
+~~click on canvas to zoom in / out~~
+
+click btn to (de)activate, can pan, can scroll
+
+###### update22/03/2018
+
+
 
 
 
