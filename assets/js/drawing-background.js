@@ -29,8 +29,8 @@ function setBackground(evt)     //handleFileSelect
                     }
                     // console.log(w, h);
                     contextReal.drawImage(img, 0, 0, w, h);
+                    cPush();
                 };
-                cPush();
             };
         })(f);
   

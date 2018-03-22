@@ -16,8 +16,8 @@
 
         <div class="lc-drawing with-gui" style="background-color:whitesmoke;">
             <div id="canvas-container">
-                <canvas id="canvas-real" class="canvas" width="1444" height="864" style="width: 1444px; height: 864px;"></canvas>
-                <canvas id="canvas-draft" class="canvas" width="1444" height="864" style="background-color: transparent; width: 1444px; height: 864px;"></canvas>
+                <canvas id="canvas-real" class="canvas" width="1444" height="864" style="background-color: rgba(255, 255, 255, 0);"></canvas>
+                <canvas id="canvas-draft" class="canvas" width="1444" height="864" style="background-color: rgba(255,255,255,0);"></canvas>
             </div>
 
         </div>
@@ -54,7 +54,6 @@
                         <div class="lc-pick-tool toolbar-button thin-button" id="drawing-eraser" title="Eraser" data-reactid=".0.0:$1">
                             <i class="fas fa-eraser fa-3x"></i>
                         </div>
-
                     </div>
 
                     <!-- <div class="col-md-1 col-xl-1"> -->
@@ -62,7 +61,6 @@
                         <div class="lc-pick-tool toolbar-button thin-button" id="drawing-line" title="Line" data-reactid=".0.0:$2">
                             <i class="fas fa-minus fa-3x"></i>
                         </div>
-
                     </div>
                 </div>
 
@@ -380,6 +378,8 @@
     <script type='text/javascript' src="assets/js/drawing-eraser.js"></script>
     <script type='text/javascript' src="assets/js/drawing-reset.js"></script>
     <script type='text/javascript' src="assets/js/drawing-undo-redo.js"></script>
+    <script type='text/javascript' src="assets/js/drawing-zoomin.js"></script>
+    <script type='text/javascript' src="assets/js/drawing-zoomout.js"></script>
     <script type='text/javascript' src="assets/js/drawing-save.js"></script>
     <script type='text/javascript' src="assets/js/drawing-background.js"></script>
     <script type='text/javascript' src="assets/js/drawing-filter.js"></script>

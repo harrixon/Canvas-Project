@@ -54,10 +54,10 @@ $('#drawing-eraser').click(()=>{
 $('#drawing-reset').click(()=>{
     currentFunction = new DrawingReset(contextReal);
 });
-$('#drawing-zoomIn').click(()=>{
+$('#drawing-zoom-in').click(()=>{
     currentFunction = new DrawingZoomIn(contextReal);
 });
-$('#drawing-zoomOut').click(()=>{
+$('#drawing-zoom-out').click(()=>{
     currentFunction = new DrawingZoomOut(contextReal);
 });
 $('#drawing-save').click(()=>{

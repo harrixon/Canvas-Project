@@ -30,6 +30,7 @@ function filter(choice){
     console.log(newPx);
     // draw new image
     contextReal.putImageData(newPx, 0, 0);
+    cPush();
 }
 
 Filters = {};
