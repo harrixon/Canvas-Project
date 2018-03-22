@@ -4,6 +4,8 @@ class DrawingQuadraticCurve extends PaintFunction{
         this.contextReal = contextReal;
         this.contextDraft = contextDraft;            
         this.status = "start";              // 1. start -> end / 2. ref
+        this.xm = 0;
+        this.ym = 0;
     }
     
     onMouseDown(coord, event){
@@ -61,6 +63,7 @@ class DrawingQuadraticCurve extends PaintFunction{
     // onMouseEnter(){}
 
     drawDraft(coord){
+        
         this.contextDraft.beginPath();
         this.contextDraft.setLineDash([5,10]);
         this.contextDraft.moveTo(this.origX, this.origY);
@@ -70,6 +73,7 @@ class DrawingQuadraticCurve extends PaintFunction{
     }
 
     drawReal(coord){
+        // this.vertex = getQuadraticCurvePoint(this.origX, this.origY, );
         this.contextReal.beginPath();
         this.contextReal.moveTo(this.origX, this.origY);
         this.contextReal.quadraticCurveTo(coord[0], coord[1], this.endX, this.endY);
@@ -86,4 +90,16 @@ class DrawingQuadraticCurve extends PaintFunction{
         this.contextDraft.stroke();
         this.contextDraft.setLineDash([]);
     }
+
+    // getQuadraticCurvePoint(startX, startY, cpX, cpY, endX, endY, position) {
+    //     return {
+    //         x:  _getQBezierValue(position, startX, cpX, endX),
+    //         y:  _getQBezierValue(position, startY, cpY, endY)
+    //     };
+    // }
+
+    // _getQBezierValue(t, p1, p2, p3) {
+    //     var iT = 1 - t;
+    //     return iT * iT * p1 + 2 * iT * t * p2 + t * t * p3;
+    // }
 }
