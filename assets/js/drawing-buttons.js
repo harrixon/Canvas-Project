@@ -56,10 +56,7 @@ $('#drawing-eraser').click(()=>{
 $('#drawing-reset').click(()=>{
     currentFunction = new DrawingReset(contextReal);
 });
-$('#drawing-zoom-in').click(()=>{
-    currentFunction = new DrawingZoomIn(contextReal);
-});
-$('#drawing-zoom-out').click(()=>{
+$('.zoom').click(()=>{
     // currentFunction = new DrawingZoomOut(contextReal);
     if (!zooming)
     {
