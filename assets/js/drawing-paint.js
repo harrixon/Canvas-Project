@@ -37,7 +37,7 @@ function paintBucketApp(e)
         data[pos] = color.r || 0;
         data[pos+1] = color.g || 0;
         data[pos+2] = color.b || 0;
-        data[pos+3] = color.hasOwnProperty("canvas-real") ? color.a : 255;
+        data[pos+3] = color.a; //color.hasOwnProperty("canvas-real") ? color.a : 255;
     };
 
     // http://www.williammalone.com/articles/html5-canvas-javascript-paint-bucket-tool/
@@ -127,7 +127,7 @@ function paintBucketApp(e)
         else
         {
             console.log("!same");
-            paintcolor = {r: paint[0], g: paint[1], b: paint[2] , a: 1};
+            paintcolor = {r: paint[0], g: paint[1], b: paint[2] , a: paint[3]};
             console.log(paintcolor);
             return false;
         }
