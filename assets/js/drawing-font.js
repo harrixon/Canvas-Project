@@ -25,7 +25,7 @@ class DrawingFont extends PaintFunction{
 
 // init canvas-text, creat txt field
 function initDrawingFont(x, y, w, bgColor){
-    $("#canvas-container").append('<canvas id="canvas-text" class="canvas" width="1280px" height="720px"></canvas>');
+    $("#canvas-container").append('<canvas id="canvas-text" class="canvas" width="1280px" height="720px" style="z-index: 10"></canvas>');
     currentFunction = new CanvasInput({
         canvas: document.getElementById('canvas-text'),
         fontSize: 28,
