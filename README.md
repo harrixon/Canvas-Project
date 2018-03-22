@@ -113,11 +113,11 @@ Reset the canvas
 
 ~~dotted line on preview~~
 
-dotted line for straight line, hollow rectangle/circle/polygon, quad.curve ?
+~~dotted line for straight line, hollow rectangle/circle/polygon, quad.curve~~
 
 ~~ellipse~~
 
-brush
+~~brush~~ becomes special pencil
 
 ~~fonts~~
 
@@ -139,7 +139,7 @@ added dotted line on preview for straight line, hollow rectangle, circle, quad.c
 
 ##### Ellipse
 
-added ellipse function, need improvement
+added ellipse function, ~~need improvement~~  done
 
 ##### Fonts
 
@@ -163,17 +163,17 @@ implemented source code from https://jsfiddle.net/Fidel90/1e8e3z7e/
 
 add color option at line 117, color obj {r:255, g:255, b:255, a:1}
 
-bug: seems to crash sometime after sometime
+~~bug: seems to crash sometime after sometime~~ crash when apply color = original color
+
+status: fixed
 
 ##### Default function
 
-set as pencil
-
-to avoid `VM20 canvas-common.js:41 Uncaught TypeError: Cannot read property 'moveEventFunction' of undefined`
+set as pencil, to avoid `VM20 canvas-common.js:41 Uncaught TypeError: Cannot read property 'moveEventFunction' of undefined`
 
 ##### Redo Undo
 
-implemented, but with bugs
+~~implemented, but with bugs~~ done
 
 ##### Eraser
 
@@ -237,3 +237,26 @@ added feature
 
 note: quality will lower after zooming out
 
+***
+
+### 22/03/2018
+
+##### UI
+
+update on web UI, merge files, 
+
+fixes: update global var, click event offset, added dotted line toggle
+
+##### Color pad
+
+fixed stroke/fill toggle, added live color to button
+
+##### To-do
+
+Save the resulting images to [Firebase Storage](https://firebase.google.com/)
+
+add btns for sp pencil's choice
+
+quad curve
+
+will allow options on font-size/family/color/align
