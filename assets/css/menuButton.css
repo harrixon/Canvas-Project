@@ -67,3 +67,16 @@
 .upload-btn{
 	margin: 10px 1.5em;
 }
+
+#w1, #w2{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding-bottom: 10px;
+	font-size: 1.5rem;
+}
+
+#color-label {
+	margin-right: 10px;
+}
+

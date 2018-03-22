@@ -138,7 +138,7 @@ $(".b1, .b2").on("click", function(){
     $('#color-picker').css("opacity","100")
 });
 
- $(".b1, .b2").on("dblclick", function(){
+ $("#canvas-draft").on("click", function(){
     $('#color-picker').css("opacity","0")
 });
 
