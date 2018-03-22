@@ -51,7 +51,7 @@ function zoompan() {
 
     }
 
-    redraw();
+    //redraw();
 
     var lastX = canvasReal.width / 2, lastY = canvasReal.height / 2;
     //
