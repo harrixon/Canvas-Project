@@ -8,6 +8,7 @@
         crossorigin="anonymous">
     <link href="assets/css/jquerycolorpicker.css" rel="stylesheet" type='text/css'>
     <link href="assets/css/menuButton.css" rel="stylesheet" type='text/css'>
+    <link href="assets/css/fontsize.css" rel="stylesheet" type='text/css'>
     <link href="assets/css/style.css" rel="stylesheet" type='text/css'>
 </head>
 
@@ -16,15 +17,15 @@
 
         <div class="lc-drawing with-gui" style="background-color:whitesmoke;">
             <div id="canvas-container">
-                <canvas id="canvas-real" class="canvas" width="1444" height="864" style="width: 1444px; height: 864px; z-index: 1"></canvas>
-                <canvas id="canvas-draft" class="canvas" width="1444" height="864" style="z-index: 2; background-color: transparent;"></canvas>
+                <canvas id="canvas-real" class="canvas" width="1444" height="864" style="Z-index:1; width: 1444px; height: 864px;"></canvas>
+                <canvas id="canvas-draft" class="canvas" width="1444" height="864" style="Z-index:2; background-color: transparent; width: 1444px; height: 864px;"></canvas>
             </div>
 
         </div>
 
 
         <div class="lc-picker container">
-            <div class="lc=picker-contents row" data-reactid=".0">
+            <div class="lc-picker-contents row" data-reactid=".0">
 
                 <div class="row">
 
@@ -37,11 +38,32 @@
 
                     </div>
 
+                       <!-- <div class="col-md-1 col-xl-1"> -->
+                        <div class="col-1">
+
+                            <div class="lc-pick-tool toolbar-button thin-button selected" id="drawing-pencil-rotating-strokes" title="Rotating Strokes" 
+                            data-reactid=".0.0:$0">
+                            <i class="fab fa-app-store-ios"></i>
+                            </div>
+    
+                        </div>
+                </div>
+                    
+
+                <div class="row">
+
+                        <div class="col-1">
+                                <div class="lc-pick-tool toolbar-button thin-button" id="drawing-pencil-rotating-stars" title="Rotating Stars"
+                                    data-reactid=".0.0:$8">
+                                   <i class="far fa-star"></i>
+                                </div>
+                            </div>
+
                     <!-- <div class="col-md-1 col-xl-1"> -->
                     <div class="col-1">
-                        <div class="lc-pick-tool toolbar-button thin-button" id="drawing-pencil-rotating-strokes" title="Pencil Rotating Strokes"
+                        <div class="lc-pick-tool toolbar-button thin-button" id="drawing-pencil-random-dots" title="Random-dots"
                             data-reactid=".0.0:$8">
-                            <i class="fas fa-pen-square"></i>
+                            <i class="fas fa-ellipsis-h"></i>
                         </div>
                     </div>
 
@@ -54,6 +76,7 @@
                         <div class="lc-pick-tool toolbar-button thin-button" id="drawing-eraser" title="Eraser" data-reactid=".0.0:$1">
                             <i class="fas fa-eraser fa-3x"></i>
                         </div>
+
                     </div>
 
                     <!-- <div class="col-md-1 col-xl-1"> -->
@@ -61,6 +84,7 @@
                         <div class="lc-pick-tool toolbar-button thin-button" id="drawing-line" title="Line" data-reactid=".0.0:$2">
                             <i class="fas fa-minus fa-3x"></i>
                         </div>
+
                     </div>
                 </div>
 
@@ -106,7 +130,7 @@
                     <!-- <div class="col-md-1 col-xl-1"> -->
                     <div class="col-1">
                         <div class="lc-pick-tool toolbar-button thin-button" id="drawing-polygon" title="Polygon" data-reactid=".0.0:$7">
-                            <i class="far fa-star fa-3x"></i>
+                                <i class="fas fa-bolt"></i>
                         </div>
 
                     </div>
@@ -247,7 +271,8 @@
                         <div class="col-2 upload-btn">
 
                             <label for="drawing-background" class="custom-file-upload">
-                                <i class="fas fa-upload fa-3x"></i>Load Background
+                                <i class="fas fa-upload fa-3x"></i>
+                                <p>Load Background</p>
                             </label>
                             <input id="drawing-background" type="file" />
 
@@ -285,7 +310,7 @@
 
 
         <div>
-            <div class="lc-options horz-toolbar container ">
+            <div class="lc-options horz-toolbar container">
                 <div data-reactid=".1" class="row">
                     <div data-reactid=".1.$1" class="col-md-1 col-xl-1" id="width1">
                         <div class="square-toolbar-button" data-reactid=".1.$1.0">
@@ -344,9 +369,41 @@
                         </div>
                     </div>
 
-                    <div class="square-toolbar-button" style="float:left;margin:1px;" data-reactid=".1.0" class="col-md-1 col-xl-a" id="dotted">
+                    <div class="square-toolbar-button" style="float:left;margin:1px;" data-reactid=".1.0" class="col-md-1 col-xl-1" id="dotted">
                         <img src="assets/img/dashed-line.png" data-reactid=".1.0.0" id="dottedPicture">
                     </div>
+
+
+                    <div class="textcontrols">
+                            <button role="button" id="size1" style="width:46px; height:26px;">
+                                <span>18px</span>
+                            </button>
+                            <button role="button" id="size2" style="width:46px; height:26px;">
+                                <span>28px</span>
+                            </button>
+                            <button role="button" id="size3"style="width:46px; height:26px;">
+                                <span>38px</span>
+                            </button>
+                            <button role="button" id="size4"style="width:46px; height:26px;">
+                                    <span>48px</span>
+                            </button>
+                            <button role="button" id="size5"style="width:46px; height:26px;">
+                                    <span>58px</span>
+                            </button>
+
+                            <button role="button" id="family1" style="width:66px; height:26px;">
+                                    <span>Arial</span>
+                            </button>
+
+                             <button role="button" id="family2" style="width:156px; height:26px;">
+                                    <span>Lucida Console</span>
+                            </button>
+                        </div>
+
+                
+                          
+
+
                 </div>
             </div>
         </div>
@@ -361,6 +418,7 @@
     <!-- custom js -->
     <script src="assets/js/jquerycolorpicker.js"></script>
     <script src="assets/js/menuButton.js"></script>
+    <script src="assets/js/fontsize.js"></script>
     <script type='text/javascript' src="assets/js/canvas-common.js"></script>
     <script type='text/javascript' src="assets/js/drawing-rectangle.js"></script>
     <script type='text/javascript' src="assets/js/drawing-quadratic-curve.js"></script>
@@ -379,13 +437,10 @@
     <script type='text/javascript' src="assets/js/drawing-eraser.js"></script>
     <script type='text/javascript' src="assets/js/drawing-reset.js"></script>
     <script type='text/javascript' src="assets/js/drawing-undo-redo.js"></script>
-    <script type='text/javascript' src="assets/js/drawing-zoomin.js"></script>
-    <script type='text/javascript' src="assets/js/drawing-zoomout.js"></script>
     <script type='text/javascript' src="assets/js/drawing-save.js"></script>
     <script type='text/javascript' src="assets/js/drawing-background.js"></script>
     <script type='text/javascript' src="assets/js/drawing-filter.js"></script>
     <script type='text/javascript' src="assets/js/drawing-buttons.js"></script>
-    <script type='text/javascript' src="assets/js/zoom-pan.js"></script>
 </body>
 
 </html>
