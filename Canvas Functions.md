@@ -62,9 +62,15 @@ hold shift when click to auto complete
 
 mouse-down on canvas to start drawing, mouse-up to stop
 
-also comes with special effect choice
-
 ######update 22/03/2018
+
+
+
+##### Brushes
+
+spray dots, stars, and strokes
+
+######update22/03/2018
 
 
 
@@ -144,7 +150,7 @@ click on canvas, set color of clicked pixel as stroke's color and fill's color a
 
 ~~click on canvas to zoom in / out~~
 
-click btn to (de)activate, can pan, can scroll
+click zoom out btn to (de)activate, can pan, can scroll
 
 ###### update22/03/2018
 
